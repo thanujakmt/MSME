@@ -24,7 +24,7 @@ function FAQ() {
 
     return (
         <div class=" bg-white px-[20px]  2xl:px-[150px] py-[20px]">
-            <span class="text-orange-500 text-2xl py-5 font-bold">Why is the MSME Registration Portal the best choice for you?</span>
+            <span class="text-pale_yellow text-2xl py-5 font-bold">Why is the MSME Registration Portal the best choice for you?</span>
             <div class="flex px-5 pb-5 pt-2">
                 <ul class="list-disc">
                     <li className="text-xl text-blue"><span className="text-sm text-black">We protect your data with 100% Secure Processing</span></li>
@@ -32,25 +32,28 @@ function FAQ() {
                     <li className="text-xl text-blue"><span className="text-sm text-black">Easy and fast approval without delays</span></li>
                 </ul>
             </div>
-            <p class="text-orange-500 text-2xl py-5 font-bold">Frequently Asked Questions</p>
-            <div className="w-200 bg-white rounded-md shadow divide-y divide-gray-200 ml-5">
+            <p class="text-pale_yellow text-2xl py-5 font-bold">Frequently Asked Questions</p>
+            <div className="w-200 bg-white rounded-md ml-5">
                 {data.map((item, index) => {
                     const isOpen = openIndex === index;
                     return (
+
                         <div className="">
-                            <button
-                                className="w-full flex justify-between items-center px-4 py-1 text-left focus:outline-none"
-                                onClick={() => setOpenIndex(isOpen ? null : index)}
-                            >
-                                <span className="font-medium">{item?.title}</span>
-                                <svg className={`w-5 h-5 transition-transform transform ${isOpen ? 'rotate-180' : ''}`}
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
+                            <div className=" my-4 py-2 shadow-xl border border-gray-200">
+                                <button
+                                    className="w-full flex justify-between items-center px-4 py-1 text-left focus:outline-none"
+                                    onClick={() => setOpenIndex(isOpen ? null : index)}
                                 >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
+                                    <span className="font-medium">{item?.title}</span>
+                                    <svg className={`w-5 h-5 transition-transform transform ${isOpen ? 'rotate-180' : ''}`}
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+                            </div>
                             {isOpen && (
                                 <div className="px-4 pb-4 text-gray-600">
                                     {item?.content}
@@ -60,7 +63,7 @@ function FAQ() {
                     )
                 })}
             </div>
-            <p class="text-orange-500 text-2xl pt-5 font-bold">We are ready to help you!!!</p>
+            <p class="text-pale-yellow text-2xl pt-5 font-bold">We are ready to help you!!!</p>
             <div class="pt-2">
                 <span >Contact Us On -</span>
                 <ul class="list-disc px-5 pb-5">

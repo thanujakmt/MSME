@@ -1,9 +1,9 @@
 function UpdateCertificateForm() {
     return (
-        <div className='flex flex-col w-150'>
+        <div className='flex flex-col lg:w-150'>
             <span class="bg-blue p-4 block text-white font-bold text-xl">Update Udyam Registration Certificate Online</span>
             <form class=" bg-gray-100 border border-gray-300 p-5">
-                <div class="my-3 mt-4 flex justify-between">
+                <div class="my-3 mt-4 lg:flex justify-evenly">
                     <div>
                         <label for="email" class="block  text-sm font-medium text-black">1. Name of Owner*</label>
                         <input type="email" id="email" class="border border-gray-300 text-black
@@ -19,7 +19,7 @@ function UpdateCertificateForm() {
                         <span class='w-60 pl-3 pt-1 text-sm block'>Enter the applicant's 10-digit mobile number without adding +91.</span>
                     </div>
                 </div>
-                <div class="my-3 flex justify-between">
+                <div class="my-3 lg:flex justify-evenly">
                     <div>
                         <label for="email" class="block my-1 text-sm font-medium text-black">3. E-Mail ID*</label>
                         <input type="email" id="email" class="border border-gray-300 text-black
@@ -58,7 +58,7 @@ function UpdateCertificateForm() {
                     </div>
                 </div>
             </form>
-            <button type="submit" class="w-full text-white bg-black font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">Submit</button>
+            <button style={{ backgroundColor: "#ff6900" }} type="submit" class="w-full text-white font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">Submit</button>
         </div>
     );
 }

@@ -15,7 +15,7 @@ function ReRegistrationPage() {
                     <img src='../src/assets/ReRegister_certificate.png' class="w-160" />
                 </div>
             </div>
-            <div className='px-[20px]  2xl:px-[150px] py-[20px]'>
+            <div className='md:px-[20px]  2xl:px-[150px] py-[20px]'>
                 <div class='px-10 py-3'>
                     <p class='text-pale_yellow text-2xl font-bold pb-2'>Udyam Re-Registration Certificate: Why is it Important</p>
                     <p class='text-sm'>Micro, Small, and Medium Enterprises used to register their business in Udyog Aadhaar earlier, but in 2020, it was changed to Udyam Registration, introduced by the Ministry of Micro, Small, and Medium Enterprises, which is a very simple registration process. This process is completely online, paperless, and based on self-declaration. There is a Udyam Re Registration process within Udyam Registration, in which there is a provision for those MSMEs who have registered their business in Udyog Aadhaar to migrate to the newly launched Udyam portal. MSMEs can get many benefits by registering their business in Udyam Registration under the program run by the government.</p><br />

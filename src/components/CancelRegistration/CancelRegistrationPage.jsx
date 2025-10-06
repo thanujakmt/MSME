@@ -4,17 +4,17 @@ function CancelRegistrationPage() {
     return (
         <div>
             <div class={``}>
-                <img src='../src/assets/Group 8 (1).png' class="" />
+                <img src='../src/assets/Cancel_banner.png' class="" />
             </div>
             <div class='lg:flex lg:justify-evenly lg:items-start lg:flex-row flex flex-col items-center px-10 pt-10 pb-3'>
                 <div>
                     <CancelRegistrationForm />
                 </div>
                 <div class='pt-0 px-5 pb-5'>
-                    <img src='../src/assets/Border (1).png' class="w-160" />
+                    <img src='../src/assets/Cancel_certificate.png' class="w-160" />
                 </div>
             </div>
-            <div className='px-[20px]  2xl:px-[150px] py-[20px]'>
+            <div className='md:px-[20px]  2xl:px-[150px] py-[20px]'>
                 <div class='px-10 py-3'>
                     <p class='text-pale_yellow text-2xl font-bold pb-2'>Cancel the Udyam certificate online. Reasons for cancelling Udyam registration</p>
                     <p class='text-sm'>Micro, Small, and Medium Enterprises play a very important role in growing and running the Indian economy in the right direction. It helps in the growth and development of the Economy as well as generating employment. For this reason, the government also pays a lot of attention to the MSME sector and to uplift them, so the government launched the Udyam Registration System. Through the Udyam Registration System, these enterprises get many benefits, such as access to government schemes easily, loans at low rates, and enhanced credibility in the market etc. However, sometimes such circumstances arise due to which MSMEs have to cancel their Udyam registration.</p><br />

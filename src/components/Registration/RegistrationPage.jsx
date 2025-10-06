@@ -59,7 +59,7 @@ function Registration() {
                     </div>
                 </div>
             </div>
-            <div className='px-[20px]  2xl:px-[150px] py-[20px]'>
+            <div className='md:px-[20px]  2xl:px-[150px] py-[20px]'>
                 <div class='px-10 py-3'>
                     <p class='text-pale_yellow text-2xl font-bold pb-2'>Defining New Udyam Registration Certificate?</p>
                     <p class='text-sm'>The <b>New Udyam Registration Certificate</b> is defined as an official document which can be issued by the Government of India for <b>Micro, Small, and Medium Enterprises</b> which reflects MSME upon successful registration under <b>Udyam Registration System</b>.</p><br />

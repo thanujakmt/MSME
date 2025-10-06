@@ -13,7 +13,7 @@ function Dashboard() {
             </div>
             <div className="  bg-white flex flex-col justify-center items-center md:flex md:flex-row md:justify-evenly py-6">
                 <div className=' md:w-[900px] flex flex-col  p-2 '>
-                    <p className="text-orange-500 text-[26px] font-bold ">MSME Registration Portal</p><br />
+                    <p className="text-pale_yellow text-[26px] font-bold ">MSME Registration Portal</p><br />
                     <span className=' text-[16px]'>Welcome to India's leading online platform for flexible Udyam Registration.</span><br />
                     <p className=' text-[16px]'>Here, we simplify the process where you can concentrate on growing your business while getting <b>special government benifits, save money, and get first access to new opportunities.</b></p><br />
                     <p className=' text-[16px]'>So whether it be that you are initiating or growing a business, seeking benifits from government schemes - our portal offers everything you need to complete your MSME Registration at one go and in one place.</p>

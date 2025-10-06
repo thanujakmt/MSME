@@ -4,7 +4,7 @@ function MSMEBenifits() {
             <div className="flex justify-evenly py-4 text-[15px] 2xl:text-[16px] px-2">
                 <div className="">
                     <div className=" py-4">
-                        <span className="text-orange-500 2xl:text-[26px] text-[22px] py-5 font-bold">Benefits of MSME Registration</span><br />
+                        <span className="text-pale_yellow 2xl:text-[26px] text-[22px] py-5 font-bold">Benefits of MSME Registration</span><br />
                         <span className=" py-4 text-[16px]">(For - Micro, Small, and Medium Enterprises)</span><br />
                     </div>
                     <div className=" flex flex-col xl:flex xl:flex-row gap-[30px]">

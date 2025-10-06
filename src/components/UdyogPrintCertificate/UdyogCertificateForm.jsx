@@ -1,40 +1,40 @@
 function UdyogCertificateForm() {
     return (
-        <div className='flex flex-col w-150'>
+        <div className='flex flex-col '>
             <span class="bg-blue p-4 block text-white font-bold text-xl">Udyam Registration 2025</span>
             <form class=" bg-gray-100 border border-gray-300 p-5">
-                <div class="my-3 mt-4 flex justify-between">
+                <div class="my-3 mt-4 lg:flex justify-evenly">
                     <div>
                         <label for="email" class="block  text-sm font-medium text-black">1. Name of Owner*</label>
                         <input type="email" id="email" class="border border-gray-300 text-black
                                         text-sm rounded-lg block w-65 p-2"
-                                            placeholder="Applicant Name" required />
+                            placeholder="Applicant Name" required />
                         <span class='w-60 pl-3 pt-1 text-sm block'>Enter the applicant's name as mentioned on the PAN CARD</span>
                     </div>
                     <div>
                         <label for="email" class="block text-sm font-medium text-black">2. Mobile Number*</label>
                         <input type="email" id="email" class="border border-gray-300 text-black
                         text-sm rounded-lg block w-65 p-2"
-                        placeholder="Mobile Number" required />
+                            placeholder="Mobile Number" required />
                         <span class='w-60 pl-3 pt-1 text-sm block'>Enter the applicant's 10-digit mobile number without adding +91.</span>
                     </div>
                 </div>
-                <div class="my-3 flex justify-between">
+                <div class="my-3 lg:flex justify-evenly">
                     <div>
                         <label for="email" class="block my-1 text-sm font-medium text-black">3. E-Mail ID*</label>
                         <input type="email" id="email" class="border border-gray-300 text-black
                         text-sm rounded-lg block w-65 p-2"
-                        placeholder="Email ID" required />
+                            placeholder="Email ID" required />
                         <span class='w-60 pl-3 pt-1 text-sm block'>Enter the applicant's Email Id. Udyam Registration Certificate will be shared on that Email.</span>
                     </div>
                     <div>
                         <label for="email" class="block my-1 text-sm font-medium text-black">4. UAM Number*</label>
                         <input type="email" id="email" class="border border-gray-300 text-black
                         text-sm rounded-lg block w-65 p-2"
-                        placeholder="UAM Number" required />
+                            placeholder="UAM Number" required />
                         <span class='w-60 pl-3 pt-1 text-sm block'>Applicant need to enter his / her 12 digit
-    UAM number. Uam number will be found
-    on the certificate as indicated below.</span>
+                            UAM number. Uam number will be found
+                            on the certificate as indicated below.</span>
                     </div>
                 </div>
                 <div class="my-3">
@@ -59,7 +59,7 @@ function UdyogCertificateForm() {
                     </div>
                 </div>
             </form>
-            <button type="submit" class="w-full text-white bg-black font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">Submit</button>
+            <button type="submit" style={{ backgroundColor: "#ff6900" }} class="w-full text-white font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">Submit</button>
         </div>
     );
 }
