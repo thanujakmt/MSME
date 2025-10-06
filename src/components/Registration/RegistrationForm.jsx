@@ -82,10 +82,17 @@ function Form() {
                     <label for="email" class="block my-1 text-sm font-medium text-black">9. Type of Organisation*</label>
                     <select id="countries" class="border border-gray-300 text-black text-sm rounded-lg p-2 w-65">
                         <option>Type of Organisation</option>
-                        <option>United States</option>
-                        <option>Canada</option>
-                        <option>France</option>
-                        <option>Germany</option>
+                        <option>Proprietorship</option>
+                        <option>Hindu Undivided Family</option>
+                        <option>Limited Liability Partnership</option>
+                        <option>Private Limited</option>
+                        <option>Public Limited</option>
+                        <option>One Person Company</option>
+                        <option>Self Help Group</option>
+                        <option>Government Department</option>
+                        <option>Society</option>
+                        <option>Trust</option>
+                        <option>Other</option>
                     </select>
                     <span class='w-60 pl-3 pt-1 text-sm block'>Select the type of organization or business the applicant owns.</span>
                  </div>
@@ -109,10 +116,9 @@ function Form() {
                     <label for="email" class="block my-1 text-sm font-medium text-black">12. Main Business Activity*</label>
                     <select id="countries" class="border border-gray-300 text-black text-sm rounded-lg p-2 w-65">
                         <option>Select Business Activity</option>
-                        <option>United States</option>
-                        <option>Canada</option>
-                        <option>France</option>
-                        <option>Germany</option>
+                        <option>Manufacturer</option>
+                        <option>Service Provider</option>
+                        <option>Traders</option>
                     </select>
                     <span class='w-60 pl-3 pt-1 text-sm block'>Select the main business activity of the applicant's enterprise.</span>
                 </div>

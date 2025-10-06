@@ -4,15 +4,15 @@ import ReRegistrationForm from './ReRegistrationForm';
 function ReRegistrationPage() {
     return (
         <div>
-            <div class={``}>
-                <img src='../src/assets/Group 7.png' class="" />
+            <div>
+                <img src='../src/assets/Re-Register_banner.png' class="" />
             </div>
             <div class='lg:flex lg:justify-evenly lg:items-start px-10 pt-10 pb-3'>
                 <div>
                     <ReRegistrationForm />
                 </div>
                 <div class='pt-0 px-5 pb-5'>
-                    <img src='../src/assets/Border (2).png' class="w-160" />
+                    <img src='../src/assets/ReRegister_certificate.png' class="w-160" />
                 </div>
             </div>
             <div className='px-[20px]  2xl:px-[150px] py-[20px]'>

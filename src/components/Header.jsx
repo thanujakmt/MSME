@@ -46,10 +46,10 @@ function Header() {
 
                               <div id="dropdownMenu2" className="hidden absolute right-0 mt-2 w-55 rounded-md bg-white shadow-lg z-10">
                                 <div className="py-1">
-                                  <a className="block px-4 py-2 text-sm text-black hover:bg-gray-100 flex"><img src="../src/assets\RightAngleIcon.png" className="h-5 w-[14px] mr-2" />Update Udyam Certificate</a>
+                                  <a href='/update' className="block px-4 py-2 text-sm text-black hover:bg-gray-100 flex"><img src="../src/assets\RightAngleIcon.png" className="h-5 w-[14px] mr-2" />Update Udyam Certificate</a>
                                   <a href='/print' className="block px-4 py-2 text-sm text-black hover:bg-gray-100 flex"><img src="../src/assets\RightAngleIcon.png" className="h-5 w-[14px] mr-2" />Print Udyam Certificate</a>
-                                  <a className="block px-4 py-2 text-sm text-black hover:bg-gray-100 flex"><img src="../src/assets\RightAngleIcon.png" className="h-5 w-[14px] mr-2" />Udyog Print Certificate</a>
-                                  <a className="block px-4 py-2 text-sm text-black hover:bg-gray-100 flex"><img src="../src/assets\RightAngleIcon.png" className="h-5 w-[14px] mr-2" />Sample Certificate</a>
+                                  <a href='/udyog_print' className="block px-4 py-2 text-sm text-black hover:bg-gray-100 flex"><img src="../src/assets\RightAngleIcon.png" className="h-5 w-[14px] mr-2" />Udyog Print Certificate</a>
+                                  <a href='/sample' className="block px-4 py-2 text-sm text-black hover:bg-gray-100 flex"><img src="../src/assets\RightAngleIcon.png" className="h-5 w-[14px] mr-2" />Sample Certificate</a>
                                 </div>
                               </div>
                             </div>

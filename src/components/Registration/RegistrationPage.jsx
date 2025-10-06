@@ -1,6 +1,32 @@
+import { useState } from 'react';
 import Form from './RegistrationForm';
 
 function Registration() {
+
+    const [openIndex, setOpenIndex] = useState(null);
+    const data = [
+        {
+            title: 'Is Udyam Registration compulsory for business owners?',
+            content: "Definitely, because if you don't have registration, you cannot access government benefits and financial assistance.",
+        },
+        {
+            title: 'How much time does it take to get a Udyam Certificate?',
+            content: "The process of registration is instant, and the certificate will also be issued immediately after approval.",
+        },
+        {
+            title: 'If I want to update my Udyam Certificate, can I do it later?',
+            content: 'Yes, MSME Registration Portal is a platform that offers businesses to modify their information when needed.',
+        },
+        {
+            title: 'How can I track the status of my Udyam Registration?',
+            content: 'You can check your status on MSME Registration Portal by mentioning your unique Udyam Registration Number or your linked contact number.',
+        },
+        {
+            title: 'Does my Udyam Registration Expire?',
+            content: 'The Udyam Registration is permanent and does not need renewal (unlike the previous MSME registration process).'
+        }
+    ];
+
     return (
         <div>
             <div class={` relative`}>
@@ -14,12 +40,12 @@ function Registration() {
                     <span class="md:text-xl">(आइए आत्मनिर्भर भारत अभियान को सफल बनाने का प्रयास करें!)</span>
                 </div>
             </div>
-            <div class='xl:flex xl:justify-evenly 2xl:flex 2xl:flex-row 2xl:items-start flex flex-col items-center px-10 pt-10 pb-3'>
+            <div class='xl:flex xl:justify-evenly 2xl:flex 2xl:flex-row 2xl:items-start flex px-10 pt-10 pb-3'>
                 <div className='md:w-160 '>
                     <Form />
                 </div>
                 <div class='px-5 pb-5'>
-                    <img src='../src/assets/Border.png' className="w-160" />
+                    <img src='../src/assets/Register_certificate.png' className="w-160" />
                     <div class='p-5 md:w-160 w-70'>
                         <p class='text-pale_yellow text-2xl font-bold pb-2'>What is a New Udyam Registration Certificate?</p>
                         <p class='text-sm'>Have you ever imagined this - <b>running a business from where you can get priority in government tenders, easy and fast approval loans?</b> This would be amazing, right?</p><br />
@@ -101,6 +127,36 @@ function Registration() {
                     <span class='text-sm flex items-center leading-7'><img src="../src/assets\RightAngleIcon.png" className="h-3 w-[14px] mr-2" />Incorrect Business Classification - Wrong MSME category placement</span>
                     <span class='text-sm flex items-center leading-7'><img src="../src/assets\RightAngleIcon.png" className="h-3 w-[14px] mr-2" />Verification Step Missing - Delay Certificate</span><br />
                     <p class='text-sm'>In case of any help or assistance, <b className='underline'>MSME Registration Portal</b> offers <b>expert guidance</b> and <b>document support</b> for successful application.</p>
+                </div>
+                <div class='px-10 py-3'>
+                    <p class='text-pale_yellow text-2xl font-bold pb-3'>Some Frequently Asked Questions for more clarification</p>
+                    <div className="w-200 bg-white rounded-md shadow divide-y divide-gray-200 ml-5">
+                        {data.map((item, index) => {
+                            const isOpen = openIndex === index;
+                            return (
+                                <div className="">
+                                    <button
+                                        className="w-full flex justify-between items-center px-4 py-1 text-left focus:outline-none"
+                                        onClick={() => setOpenIndex(isOpen ? null : index)}
+                                    >
+                                        <span className="font-medium">{item?.title}</span>
+                                        <svg className={`w-5 h-5 transition-transform transform ${isOpen ? 'rotate-180' : ''}`}
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                    {isOpen && (
+                                        <div className="px-4 pb-4 text-gray-600">
+                                            {item?.content}
+                                        </div>
+                                    )}
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
                 <div class='px-10 pt-3 pb-6'>
                     <p class='text-pale_yellow text-2xl font-bold pb-8'>Register yourself on MSME Registration Portal today!</p>

@@ -24,7 +24,7 @@ function Dashboard() {
             </div>
             <div className={`relative`}>
                 <div className=''>
-                    <img src='../src/assets/Group 12.png' className=' h-56 relative z-1' />
+                    <img src='../src/assets/Bg2.png' className=' h-56 relative z-1' />
                 </div>
                 <div className='absolute inset-0 flex flex-col items-center justify-center z-2'>
                     <p className="text-white text-center text-[20px] 2xl:text-3xl py-4 font-bold">REGISTER YOUR BUSINESS!!</p>

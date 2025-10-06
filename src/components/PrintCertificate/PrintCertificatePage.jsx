@@ -5,13 +5,14 @@ import PrintCertificateForm from "./PrintCertificateForm";
 function PrintCertificatePage() {
     return (
          <>
-            <div class={`w-screen`}>
-                <img src='../src/assets/Group 8 (1).png' class="w-screen" />
+            <div className="relative">
+                <img src='../src/assets/Print_Banner.jpeg' class="w-screen relative z-1" />
+                <p className={"text-white text-3xl absolute inset-0 flex items-center justify-center z-2"}>PRINT UDYAM CERTIFICATE</p>
             </div>
             <div class='flex justify-between items-start px-12 pt-10 pb-3'>
                 <PrintCertificateForm />
                 <div class='pt-0 px-5 pb-5'>
-                    <img src='../src/assets/Border (3).png' class="w-160" />
+                    <img src='../src/assets/Print_certificate.png' class="w-160" />
                 </div>
             </div>
             <div class='px-10 py-3'>

@@ -1,8 +1,9 @@
 function ForgetRegistrationPage() {
     return (
         <div>
-            <div class={`w-screen`}>
-                <img src='../src/assets/Group 8 (1).png' class="w-screen" />
+            <div class={`w-screen relative`}>
+                <img src='../src/assets/Forgot_banner.jpeg' class="w-screen relative z-1" />
+                <p className={"text-white text-3xl absolute inset-0 flex items-center justify-center z-2"}>Forget Udyam registration</p>
             </div>
             <div class='px-10 py-3'>
                 <p class='text-orange-500 text-2xl font-bold pb-2'>Forget Udyam registration</p>

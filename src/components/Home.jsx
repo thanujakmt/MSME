@@ -7,29 +7,29 @@ import ReRegistrationPage from './ReRegistration/ReRegistrationPage';
 import CancelRegistrationPage from './CancelRegistration/CancelRegistrationPage';
 import ForgetRegistrationPage from './ForgetRegistration/ForgetRegistrationPage';
 import PrintCertificatePage from './PrintCertificate/PrintCertificatePage';
+import UpdateCertificatePage from './UpdateCertificate/UpdateCertificatePage';
+import SampleCertificate from './SampleCertificate';
+import UdyogPrintCertificate from './UdyogPrintCertificate/UdyogPrintCertificate';
 
 function Home() {
     return (
-        <div className=' flex flex-col min-h-screen '>
-            <>
-                <Router>
-                    <Header />
-                    <Routes>
-                        <Route path='/dashboard' element={<Dashboard />} />
-                        <Route path="/register" element={<Registration />} />
-                        <Route path="/re-register" element={<ReRegistrationPage />} />
-                        <Route path="/cancel" element={<CancelRegistrationPage />} />
-                        <Route path="/forgot" element={<ForgetRegistrationPage />} />
-                        <Route path="/print" element={<PrintCertificatePage />} />
-                        {/* <Route path="/re-register" element={<ReRegistrationPage />} />
+        <>
+        <Router>
+                <Header />
+                <Routes>
+                    <Route path='/dashboard' element={<Dashboard />} />
+                    <Route path="/register" element={<Registration />} />
+                    <Route path="/re-register" element={<ReRegistrationPage />} />
                     <Route path="/cancel" element={<CancelRegistrationPage />} />
-                    <Route path="/forgot" element={<ForgetRegistrationPage />} /> */}
-                    </Routes>
-                    <Footer />
-                </Router>
-            </>
-        </div>
-
+                    <Route path="/forgot" element={<ForgetRegistrationPage />} />
+                    <Route path="/print" element={<PrintCertificatePage />} />
+                    <Route path="/update" element={<UpdateCertificatePage />} />
+                    <Route path="/udyog_print" element={<UdyogPrintCertificate />} />
+                    <Route path="/sample" element={<SampleCertificate />} />
+                </Routes>
+                <Footer />
+        </Router>
+        </>
     );
 }
 
