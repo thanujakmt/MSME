@@ -3,7 +3,7 @@ import States_Districts from '../../States_Districts.json';
 import { useState } from 'react';
 
 function CancelRegistrationForm() {
-    const [stateVal, setStateVal] = useState([]);
+    const [stateVal, setStateVal] = useState("");
 
     const {
         register,
@@ -49,11 +49,14 @@ function CancelRegistrationForm() {
                                 minLength: {
                                     value: 10,
                                     message: "Applicant's mobile number must be 10"
-                                }, required: "Applicant's mobile number is required"
+                                }, maxLength: {
+                                    value: 10,
+                                    message: "Applicant's mobile number cannot exceed 10 characters",
+                                },  required: "Applicant's mobile number is required"
                             })}
                             placeholder="Mobile Number" />
                         {errors?.number && (
-                            <p className="text-red-500 text-sm mt-1">{errors?.number?.message}</p>
+                            <p className="text-red-500 text-sm mt-1 w-60">{errors?.number?.message}</p>
                         )}
                         <span className='w-60 pl-3 pt-1 text-sm block'>Enter the applicant's 10-digit mobile number without adding +91.</span>
                     </div>

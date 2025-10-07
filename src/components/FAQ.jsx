@@ -23,16 +23,16 @@ function FAQ() {
     ];
 
     return (
-        <div class=" bg-white px-[20px]  2xl:px-[150px] py-[20px]">
-            <span class="text-pale_yellow text-2xl py-5 font-bold">Why is the MSME Registration Portal the best choice for you?</span>
-            <div class="flex px-5 pb-5 pt-2">
-                <ul class="list-disc">
+        <div className=" bg-white px-[20px]  2xl:px-[150px] py-[20px]">
+            <span className="text-pale_yellow text-2xl py-5 font-bold">Why is the MSME Registration Portal the best choice for you?</span>
+            <div className="flex px-5 pb-5 pt-2">
+                <ul className="list-disc">
                     <li className="text-xl text-blue"><span className="text-sm text-black">We protect your data with 100% Secure Processing</span></li>
                     <li className="text-xl text-blue"><span className="text-sm text-black">Budget-Friendly Registration Fees</span></li>
                     <li className="text-xl text-blue"><span className="text-sm text-black">Easy and fast approval without delays</span></li>
                 </ul>
             </div>
-            <p class="text-pale_yellow text-2xl py-5 font-bold">Frequently Asked Questions</p>
+            <p className="text-pale_yellow text-2xl py-5 font-bold">Frequently Asked Questions</p>
             <div className="w-200 bg-white rounded-md ml-5">
                 {data.map((item, index) => {
                     const isOpen = openIndex === index;
@@ -63,19 +63,19 @@ function FAQ() {
                     )
                 })}
             </div>
-            <p class="text-pale-yellow text-2xl pt-5 font-bold">We are ready to help you!!!</p>
-            <div class="pt-2">
+            <p className="text-pale-yellow text-2xl pt-5 font-bold">We are ready to help you!!!</p>
+            <div className="pt-2">
                 <span >Contact Us On -</span>
-                <ul class="list-disc px-5 pb-5">
-                    <li class="text-sm">Email - <a href="udyamcareinfo@gmail.com" className="text-blue-300 underline">udyamcareinfo@gmail.com</a></li>
-                    <li class="text-sm">Our Website - <a href="www.msmeregistration.in" target="_blank" className="text-blue-300 underline">www.msmeregistration.in</a></li>
+                <ul className="list-disc px-5 pb-5">
+                    <li className="text-sm">Email - <a href="udyamcareinfo@gmail.com" className="text-blue-300 underline">udyamcareinfo@gmail.com</a></li>
+                    <li className="text-sm">Our Website - <a href="www.msmeregistration.in" target="_blank" className="text-blue-300 underline">www.msmeregistration.in</a></li>
                 </ul>
                 <p>You can join 1000+ successful Indian Entrepreneurs who have already been enrolled in the power of MSME Registration Platform. Do not miss this chance to get ahead of the curve. <b>All of these are just a few clicks away!</b></p>
-                <p class="py-5"><b>Hurry up!</b> Don't miss the chance for this extensive government schemes, financial advantages, and opportunities to grow business that come with official MSME status.</p>
-                <p class="py-5">Our aim is to ensure you that your registration process will be smooth, secure and successful.</p>
+                <p className="py-5"><b>Hurry up!</b> Don't miss the chance for this extensive government schemes, financial advantages, and opportunities to grow business that come with official MSME status.</p>
+                <p className="py-5">Our aim is to ensure you that your registration process will be smooth, secure and successful.</p>
                 <p>So take your step to expand your business today because your success story starts from now!</p>
                 <p><b>ACT NOW, GROW AHEAD, GROW FASTER!</b></p>
-                <p class="text-sm"><b>Register Now</b> : <a href="http://msmeregistration.in" target="_blank" className="text-blue-300 underline">MSMERegistration.in</a> with your growth partner!</p>            </div>
+                <p className="text-sm"><b>Register Now</b> : <a href="http://msmeregistration.in" target="_blank" className="text-blue-300 underline">MSMERegistration.in</a> with your growth partner!</p>            </div>
         </div>
     );
 }
