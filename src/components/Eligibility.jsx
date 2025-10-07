@@ -26,9 +26,9 @@ function Eligibility() {
                 <div>
                     <span className="text-[14px]">If your investment in plant and machinery or equipment falls under the government’s MSME definition, you are eligible!</span>
                 </div>
-                <div className='  bg-orange px-5 py-1 rounded-[5px] text-white 2xl:text-[18px] text-center font-bold'>
+                <a className='bg-orange px-5 py-1 rounded-[5px] text-white 2xl:text-[18px] text-center font-bold' href={"/register"}>
                     <button>Get Udyam Registration</button>
-                </div>
+                </a>
             </div>
         </div>
     );

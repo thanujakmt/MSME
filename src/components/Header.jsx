@@ -7,8 +7,8 @@ function Header() {
                     <div className="relative flex h-16 items-center justify-between">
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                         <div className="flex shrink-0 items-center">
-                        <img src="https://msmeregistration.in/static/media/navLogo.f48f282d409cc0f5873b.webp"
-                        alt="Company Logo" className="h-16 w-[170px]" />
+                        <a href="/dashboard"><img src="https://msmeregistration.in/static/media/navLogo.f48f282d409cc0f5873b.webp"
+                        alt="Company Logo" className="h-16 w-[170px]" /></a>
                         </div>
                     </div>
                     <div className="hidden sm:ml-6 sm:block">
