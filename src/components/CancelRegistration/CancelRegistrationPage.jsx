@@ -1,17 +1,18 @@
+
 import CancelRegistrationForm from './CancelRegistrationForm';
 
 function CancelRegistrationPage() {
     return (
         <div>
-            <div>
-                <img src='../src/assets/Cancel_banner.png'/>
+            <div className=' 2xl:h-[700px]'>
+                <img src='../src/assets/Cancel_banner.png' className=' h-full w-full' />
             </div>
             <div className='lg:flex lg:justify-evenly lg:items-start lg:flex-row flex flex-col items-center px-10 pt-10 pb-3'>
                 <div>
                     <CancelRegistrationForm />
                 </div>
-                <div className='pt-0 px-5 pb-5'>
-                    <img src='../src/assets/Cancel_certificate.png' className="w-160" />
+                <div className='py-5 lg:py-0 px-5 lg:h-[740px] lg:w-[640px]'>
+                    <img src='../src/assets/Cancel_certificate.png' className="w-full h-full" />
                 </div>
             </div>
             <div className='md:px-[20px]  2xl:px-[150px] py-[20px]'>

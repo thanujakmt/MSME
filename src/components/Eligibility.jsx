@@ -22,7 +22,14 @@ function Eligibility() {
                     <li className="text-xl text-blue"><b className="text-sm text-black">Startups looking for financial support</b></li>
                 </ul>
             </div>
-            <span className="text-[12px]">If your investment in plant and machinery or equipment falls under the government’s MSME definition, you are eligible!</span>
+            <div className=' lg:flex lg:flex-row flex flex-col gap-[10px] 2xl:gap-[200px]'>
+                <div>
+                    <span className="text-[14px]">If your investment in plant and machinery or equipment falls under the government’s MSME definition, you are eligible!</span>
+                </div>
+                <div className='  bg-orange px-5 py-1 rounded-[5px] text-white 2xl:text-[18px] text-center font-bold'>
+                    <button>Get Udyam Registration</button>
+                </div>
+            </div>
         </div>
     );
 }

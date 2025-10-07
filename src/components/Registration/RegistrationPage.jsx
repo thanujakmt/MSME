@@ -30,7 +30,9 @@ function Registration() {
     return (
         <div>
             <div className={` relative`}>
-                <img src='../src/assets/urban-skyline.png' className=" relative z-1" />
+                <div className=' 2xl:h-[700px]'>
+                    <img src='../src/assets/urban-skyline.png' className=" relative z-1 2xl:w-full h-full" />
+                </div>
                 <div className={"text-white text-[8px] absolute inset-0 flex flex-col items-center justify-center z-2"}>
                     <span className=" md:text-3xl pb-4">Udyam Registration 2025</span>
                     <span className="lg:text-xl md:text-[16px]">A Udyam registration certificate is necessary to obtain loans from banks and benefits provided</span>
@@ -40,13 +42,15 @@ function Registration() {
                     <span className="md:text-xl">(आइए आत्मनिर्भर भारत अभियान को सफल बनाने का प्रयास करें!)</span>
                 </div>
             </div>
-            <div className='xl:flex xl:justify-evenly 2xl:flex 2xl:flex-row 2xl:items-start flex px-10 pt-10 pb-3'>
+            <div className='xl:flex xl:justify-evenly 2xl:flex 2xl:flex-row 2xl:items-start px-10 pt-10 pb-3'>
                 <div className='md:w-160 '>
                     <Form />
                 </div>
-                <div className='px-5 pb-5'>
-                    <img src='../src/assets/Register_certificate.png' className="w-160" />
-                    <div className='p-5 md:w-160 w-70'>
+                <div className='flex flex-col items-start py-5 2xl:py-0 2xl:h-[1470px]'>
+                    <div className=' 2xl:h-[1100px] 2xl:w-[700px]'>
+                        <img src='../src/assets/Register_certificate.png' className=" h-full w-full" />
+                    </div>
+                    <div className=' 2xl:pt-[60px] md:w-160 w-70'>
                         <p className='text-pale_yellow text-2xl font-bold pb-2'>What is a New Udyam Registration Certificate?</p>
                         <p className='text-sm'>Have you ever imagined this - <b>running a business from where you can get priority in government tenders, easy and fast approval loans?</b> This would be amazing, right?</p><br />
 
@@ -130,11 +134,13 @@ function Registration() {
                 </div>
                 <div className='px-10 py-3'>
                     <p className='text-pale_yellow text-2xl font-bold pb-3'>Some Frequently Asked Questions for more clarification</p>
-                    <div className="w-200 bg-white rounded-md shadow divide-y divide-gray-200 ml-5">
+                    <div className="md:w-200 bg-white rounded-md shadow divide-y divide-gray-200 ml-5">
                         {data.map((item, index) => {
                             const isOpen = openIndex === index;
                             return (
+                                
                                 <div className="">
+                                    <div className=" my-2 py-2 shadow-xl ">
                                     <button
                                         className="w-full flex justify-between items-center px-4 py-1 text-left focus:outline-none"
                                         onClick={() => setOpenIndex(isOpen ? null : index)}
@@ -148,6 +154,7 @@ function Registration() {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                         </svg>
                                     </button>
+                                    </div>
                                     {isOpen && (
                                         <div className="px-4 pb-4 text-gray-600">
                                             {item?.content}

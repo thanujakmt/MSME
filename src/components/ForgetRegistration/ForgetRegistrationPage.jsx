@@ -2,7 +2,9 @@ function ForgetRegistrationPage() {
     return (
         <div>
             <div className={` relative`}>
-                <img src='../src/assets/Forgot_banner.jpeg' className="w-full relative z-1" />
+                <div className=" 2xl:h-[700px]">
+                    <img src='../src/assets/Forgot_banner.jpeg' className="w-full h-full relative z-1" />
+                </div>
                 <p className={"text-white md:text-3xl absolute inset-0 flex items-center justify-center z-2"}>Forget Udyam registration</p>
             </div>
             <div className="md:px-[20px]  2xl:px-[150px] py-[20px]">

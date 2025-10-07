@@ -1,3 +1,4 @@
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
@@ -14,7 +15,7 @@ import UdyogPrintCertificate from './UdyogPrintCertificate/UdyogPrintCertificate
 function Home() {
     return (
         <>
-        <Router>
+            <Router>
                 <Header />
                 <Routes>
                     <Route path='/dashboard' element={<Dashboard />} />
@@ -28,7 +29,7 @@ function Home() {
                     <Route path="/sample" element={<SampleCertificate />} />
                 </Routes>
                 <Footer />
-        </Router>
+            </Router>
         </>
     );
 }

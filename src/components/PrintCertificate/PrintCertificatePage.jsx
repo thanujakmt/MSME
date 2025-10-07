@@ -3,16 +3,16 @@ import PrintCertificateForm from "./PrintCertificateForm";
 function PrintCertificatePage() {
     return (
         <>
-            <div className="relative">
-                <img src='../src/assets/Print_Banner.jpeg' className="w-full relative z-1" />
+            <div className="relative 2xl:h-[700px]">
+                <img src='../src/assets/Print_Banner.jpeg' className="h-full w-full relative z-1" />
                 <p className={"text-white 2xl:text-3xl absolute inset-0 flex items-center justify-center z-2"}>PRINT UDYAM CERTIFICATE</p>
             </div>
             <div className='lg:flex lg:flex-row lg:justify-evenly lg:items-start flex flex-col items-center px-12 pt-10 pb-3'>
                 <div className="2xl:w-160 md:w-160 ">
                     <PrintCertificateForm />
                 </div>
-                <div className='pt-0 px-5 pb-5 2xl:w-160 md:w-150 w-90'>
-                    <img src='../src/assets/Print_certificate.png' className="" />
+                <div className='py-5 lg:py-0 px-5 2xl:w-160 md:w-150 w-90 lg:h-[600px]'>
+                    <img src='../src/assets/Print_certificate.png' className=" h-full w-full" />
                 </div>
             </div>
             <div className="md:px-[20px]  2xl:px-[150px] py-[20px]">

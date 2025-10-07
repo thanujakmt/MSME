@@ -7,8 +7,8 @@ function UpdateCertificatePage() {
             <UpdateCertificateForm />
             <div className='flex flex-col border bg-gray-100 w-75 md:w-115 2xl:w-140'>
                 <span className="bg-blue p-4 block text-white font-bold text-xl">Update Udyam Registration Certificate Online 2025</span>
-                <div className=' px-5 py-5'>
-                    <img src='../src/assets/Update_certificate.png' />
+                <div className=' px-5 py-5 lg:h-[630px]'>
+                    <img src='../src/assets/Update_certificate.png' className=' w-full h-full' />
                 </div>
             </div>
         </div>

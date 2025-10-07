@@ -8,7 +8,9 @@ function Dashboard() {
     return (
         <div className="">
             <div className={` relative`}>
-                <img src='../src/assets/BG.jpg' className=" relative z-1" />
+                <div className=' 2xl:h-[700px]'>
+                    <img src='../src/assets/BG.jpg' className=" relative z-1 w-full h-full" />
+                </div>
                 <p className={"text-white  2xl:text-3xl absolute inset-0 flex items-center justify-center z-2"}>Here is your trusted Business Growth Partner!!</p>
             </div>
             <div className="  bg-white flex flex-col justify-center items-center md:flex md:flex-row md:justify-evenly py-6">

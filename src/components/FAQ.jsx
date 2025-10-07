@@ -33,7 +33,7 @@ function FAQ() {
                 </ul>
             </div>
             <p className="text-pale_yellow text-2xl py-5 font-bold">Frequently Asked Questions</p>
-            <div className="w-200 bg-white rounded-md ml-5">
+            <div className="2xl:w-200 bg-white rounded-md ml-5">
                 {data.map((item, index) => {
                     const isOpen = openIndex === index;
                     return (
