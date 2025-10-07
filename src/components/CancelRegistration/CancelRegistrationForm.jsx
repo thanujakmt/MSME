@@ -1,97 +1,176 @@
+import { useForm } from 'react-hook-form';
+import States_Districts from '../../States_Districts.json';
+import { useState } from 'react';
+
 function CancelRegistrationForm() {
+    const [stateVal, setStateVal] = useState([]);
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors }
+    } = useForm();
+    console.log("fbhfw", errors);
+
+    const onSubmit = (data) => {
+        console.log("rfggfrewerfgb", data);
+    }
+
+    const districts = (data) => {
+        return data?.map((dist) => (
+            <option value={dist} key={dist}>
+                {dist}
+            </option>
+        ));
+    };
+
+
     return (
-        <div class='md:w-160'>
-            <span class="bg-blue p-4 block text-white font-bold text-xl">Cancel Udyam Registration Online Form</span>
-            <form class=" bg-gray border border-gray-300 p-5">
-                <div class="my-3 mt-4 md:flex justify-evenly">
+        <div className='md:w-160'>
+            <span className="bg-blue p-4 block text-white font-bold text-xl">Cancel Udyam Registration Online Form</span>
+            <form className=" bg-gray border border-gray-300 p-5" onSubmit={handleSubmit(onSubmit)}>
+                <div className="my-3 mt-4 md:flex justify-evenly">
                     <div>
-                        <label for="email" class="block  text-sm font-medium text-black">1. Name of Owner*</label>
-                        <input type="email" id="email" class="border border-gray-300 text-black
+                        <label htmlFor="name" className="block  text-sm font-medium text-black">1. Name of Owner*</label>
+                        <input type="text" id="name" className="border border-gray-300 text-black
                                         text-sm rounded-lg block w-65 p-2"
-                            placeholder="Applicant Name" required />
-                        <span class='w-60 pl-3 pt-1 text-sm block'>Enter the applicant's name as mentioned on the PAN CARD</span>
+                            {...register('name', { required: "Applicant's name is required" })}
+                            placeholder="Applicant Name" />
+                        {errors?.name && (
+                            <p className="text-red-500 text-sm mt-1">{errors?.name?.message}</p>
+                        )}
+                        <span className='w-60 pl-3 pt-1 text-sm block'>Enter the applicant's name as mentioned on the PAN CARD</span>
                     </div>
                     <div>
-                        <label for="email" class="block text-sm font-medium text-black">2. Mobile Number*</label>
-                        <input type="email" id="email" class="border border-gray-300 text-black
+                        <label htmlFor="number" className="block text-sm font-medium text-black">2. Mobile Number*</label>
+                        <input type="number" id="number" className="border border-gray-300 text-black
                         text-sm rounded-lg block w-65 p-2"
-                            placeholder="Mobile Number" required />
-                        <span class='w-60 pl-3 pt-1 text-sm block'>Enter the applicant's 10-digit mobile number without adding +91.</span>
+                            {...register('number', {
+                                minLength: {
+                                    value: 10,
+                                    message: "Applicant's mobile number must be 10"
+                                }, required: "Applicant's mobile number is required"
+                            })}
+                            placeholder="Mobile Number" />
+                        {errors?.number && (
+                            <p className="text-red-500 text-sm mt-1">{errors?.number?.message}</p>
+                        )}
+                        <span className='w-60 pl-3 pt-1 text-sm block'>Enter the applicant's 10-digit mobile number without adding +91.</span>
                     </div>
                 </div>
-                <div class="my-3 md:flex justify-evenly">
+                <div className="my-3 md:flex justify-evenly">
                     <div>
-                        <label for="email" class="block my-1 text-sm font-medium text-black">3. E-Mail ID*</label>
-                        <input type="email" id="email" class="border border-gray-300 text-black
-                        text-sm rounded-lg block w-65 p-2"
-                            placeholder="Email ID" required />
-                        <span class='w-60 pl-3 pt-1 text-sm block'>Enter the applicant's Email Id. Udyam Registration Certificate will be shared on that Email.</span>
+                        <label htmlFor="email" className="block my-1 text-sm font-medium text-black">3. E-Mail ID*</label>
+                        <input type="email" id="email" className="border border-gray-300 text-black
+                        text-sm rounded-lg block w-65 p-2" {...register('email', { required: "Applicant's email id is required" })}
+                            placeholder="Email ID" />
+                        {errors?.email && (
+                            <p className="text-red-500 text-sm mt-1">{errors?.email?.message}</p>
+                        )}
+                        <span className='w-60 pl-3 pt-1 text-sm block'>Enter the applicant's Email Id. Udyam Registration Certificate will be shared on that Email.</span>
                     </div>
                     <div>
-                        <label for="email" class="block my-1 text-sm font-medium text-black">4. UAM Number*</label>
-                        <input type="email" id="email" class="border border-gray-300 text-black
+                        <label htmlFor="uamNumber" className="block my-1 text-sm font-medium text-black">4. UAM Number*</label>
+                        <input type="number" id="uamNumber" className="border border-gray-300 text-black
                         text-sm rounded-lg block w-65 p-2"
-                            placeholder="UAM Number" required />
-                        <span class='w-60 pl-3 pt-1 text-sm block'>Applicant need to enter his / her 12 digit
+                            placeholder="UAM Number" {...register('uamNumber', {
+                                minLength: {
+                                    value: 12,
+                                    message: "Applicant's UAM number must be 12"
+                                }, required: "Applicant's UAM number is required"
+                            })} />
+                        {errors?.uamNumber && (
+                            <p className="text-red-500 text-sm mt-1">{errors?.uamNumber?.message}</p>
+                        )}
+                        <span className='w-60 pl-3 pt-1 text-sm block'>Applicant need to enter his / her 12 digit
                             UAM number. Uam number will be found
                             on the certificate as indicated below.</span>
                     </div>
                 </div>
-                <div class="my-3 md:flex justify-evenly">
+                <div className="my-3 md:flex justify-evenly">
                     <div>
-                        <label for="email" class="block my-1 text-sm font-medium text-black">5. Business Name*</label>
-                        <input type="email" id="email" class="border border-gray-300 text-black
+                        <label htmlFor="businessName" className="block my-1 text-sm font-medium text-black">5. Business Name*</label>
+                        <input type="text" id="businessName" className="border border-gray-300 text-black
                         text-sm rounded-lg block w-65 p-2"
-                            placeholder="Business Name" required />
-                        <span class='w-60 pl-3 pt-1 text-sm block'>Enter the applicant's Business Name</span>
+                            placeholder="Business Name" {...register('businessName', { required: "Applicant's business name is required" })} />
+                        {errors?.businessName && (
+                            <p className="text-red-500 text-sm mt-1">{errors?.businessName?.message}</p>
+                        )}
+                        <span className='w-60 pl-3 pt-1 text-sm block'>Enter the applicant's Business Name</span>
                     </div>
                     <div>
-                        <label for="email" class="block my-1 text-sm font-medium text-black">6. Type of Cancellation*</label>
-                        <select id="countries" class="border border-gray-300 text-black text-sm rounded-lg p-2 w-65">
-                            <option>Select Type of Cancellation</option>
-                            <option>United States</option>
-                            <option>Canada</option>
-                            <option>France</option>
-                            <option>Germany</option>
+                        <label htmlFor="cancellation" className="block my-1 text-sm font-medium text-black">6. Type of Cancellation*</label>
+                        <select id="cancellation" className="border border-gray-300 text-black text-sm rounded-lg p-2 w-65" {...register('cancellation', { required: 'Type of Cancellation is required' })}>
+                            <option value="">Select Type of Cancellation</option>
+                            <option>No Further Need</option>
+                            <option>I have shut down my business</option>
+                            <option>This is my duplicate UDYAM/UAM</option>
+                            <option>Company Owner Changed</option>
+                            <option>Other</option>
                         </select>
-                        <span class='w-60 pl-3 pt-1 text-sm block'>Applicant are required to enter reason for
+                        {errors?.cancellation && (
+                            <p className="text-red-500 text-sm mt-1">{errors?.cancellation?.message}</p>
+                        )}
+                        <span className='w-60 pl-3 pt-1 text-sm block'>Applicant are required to enter reason htmlFor
                             cancellation</span>
                     </div>
                 </div>
-                <div class="my-3 md:flex justify-evenly">
+                <div className="my-3 md:flex justify-evenly">
                     <div>
-                        <label for="email" class="block my-1 text-sm font-medium text-black">7. State*</label>
-                        <select id="countries" class="border border-gray-300 text-black text-sm rounded-lg p-2 w-65">
-                            <option>Select State</option>
-                            <option>United States</option>
-                            <option>Canada</option>
-                            <option>France</option>
-                            <option>Germany</option>
+                        <label htmlFor="state" className="block my-1 text-sm font-medium text-black">7. State*</label>
+                        <select id="state" className="border border-gray-300 text-black text-sm rounded-lg p-2 w-65"
+                            {...register("state", {
+                                required: "Applicant's state is required",
+                                onChange: (e) => {
+                                    const selectedState = e.target.value;
+                                    setStateVal(selectedState);
+                                }
+                            })}>
+                            <option value="">Select State</option>
+                            {States_Districts?.map((item) => {
+                                return (
+                                    <option value={item?.state} key={item?.state}>{item?.state}</option>
+                                )
+                            })}
                         </select>
-                        <span class='w-60 pl-3 pt-1 text-sm block'>Select the applicant's Office State</span>
+                        {errors?.state && (
+                            <p className="text-red-500 text-sm mt-1">{errors?.state?.message}</p>
+                        )}
+                        <span className='w-60 pl-3 pt-1 text-sm block'>Select the applicant's Office State</span>
                     </div>
                     <div>
-                        <label for="email" class="block my-1 text-sm font-medium text-black">8. District*</label>
-                        <select id="countries" class="border border-gray-300 text-black text-sm rounded-lg p-2 w-65">
-                            <option>Select District</option>
-                            <option>United States</option>
-                            <option>Canada</option>
-                            <option>France</option>
-                            <option>Germany</option>
+                        <label htmlFor="district" className="block my-1 text-sm font-medium text-black">8. District*</label>
+                        <select
+                            id="district"
+                            className="border border-gray-300 text-black text-sm rounded-lg p-2 w-65"
+                            {...register('district', { required: "Applicant's district is required" })}
+                        >
+                            <option value="">Select District</option>
+                            {districts(
+                                States_Districts?.find((item) => item?.state === stateVal)?.districts
+                            )}
                         </select>
-                        <span class='w-60 pl-3 pt-1 text-sm block'>Select the applicant's Office District</span>
+                        {errors?.district && (
+                            <p className="text-red-500 text-sm mt-1">{errors?.district?.message}</p>
+                        )}
+                        <span className='w-60 pl-3 pt-1 text-sm block'>Select the applicant's Office District</span>
                     </div>
                 </div>
-                <div class="my-3 mt-5">
-                    <div class="flex items-start mb-5">
-                        <div class="flex items-center h-5">
-                            <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 " required />
+                <div className="my-3 mt-5">
+                    <div className="flex items-start mb-5">
+                        <div className="flex items-center h-5">
+                            <input id="termsOfService" type="checkbox" value="" className="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 " {...register('termsOfService', { required: "Terms Of Service is required" })} />
                         </div>
-                        <label for="remember" class="ms-2 text-sm font-medium text-gray-900">I agree to the Terms of Service</label>
+                        <label htmlFor="termsOfService" className="ms-2 text-sm font-medium text-gray-900">I agree to the Terms of Service</label>
                     </div>
+                    {errors?.termsOfService && (
+                        <p className="text-red-500 text-sm mt-1">{errors?.termsOfService?.message}</p>
+                    )}
                 </div>
+                <button type="submit" onClick={() => onSubmit()
+                } style={{ backgroundColor: "#ff9933" }} className="w-full text-white font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">Submit</button>
             </form>
-            <button type="submit" style={{ backgroundColor: "#ff9933" }} class="w-full text-white font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">Submit</button>
+
 
         </div>
     );

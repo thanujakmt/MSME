@@ -35,7 +35,7 @@ function PrintCertificateForm() {
                         <span class='w-60 pl-3 pt-1 text-sm block'>Applicant need to enter his udyam registration number. as mentioned on udyam certificate</span>
                     </div>
                 </div>
-                <div class="my-3 lg:flex justify-evenly">
+                <div class="my-3">
                     <div>
                         <label for="email" class="block my-1 text-sm font-medium text-black">5. State*</label>
                         <select id="countries" class="border border-gray-300 text-black text-sm w-full rounded-lg p-2 ">
@@ -45,7 +45,7 @@ function PrintCertificateForm() {
                             <option>France</option>
                             <option>Germany</option>
                         </select>
-                        <span class='w-60 pl-3 pt-1 text-sm block'>Select the applicant's Office State</span>
+                        <span class='w-full pl-3 pt-1 text-sm block'>Select the applicant's Office State</span>
                     </div>
                 </div>
                 <div class="my-3 mt-5">

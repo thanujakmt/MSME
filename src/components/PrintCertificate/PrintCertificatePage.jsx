@@ -1,5 +1,3 @@
-import Footer from "../Footer";
-import Header from "../Header";
 import PrintCertificateForm from "./PrintCertificateForm";
 
 function PrintCertificatePage() {
@@ -10,7 +8,7 @@ function PrintCertificatePage() {
                 <p className={"text-white 2xl:text-3xl absolute inset-0 flex items-center justify-center z-2"}>PRINT UDYAM CERTIFICATE</p>
             </div>
             <div class='lg:flex lg:flex-row lg:justify-evenly lg:items-start flex flex-col items-center px-12 pt-10 pb-3'>
-                <div className="2xl:w-160 md:w-140 ">
+                <div className="2xl:w-160 md:w-160 ">
                     <PrintCertificateForm />
                 </div>
                 <div class='pt-0 px-5 pb-5 2xl:w-160 md:w-150 w-90'>
