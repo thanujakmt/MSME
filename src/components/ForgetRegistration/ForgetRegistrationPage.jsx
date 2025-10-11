@@ -13,9 +13,6 @@ function ForgetRegistrationPage() {
                 <div className="2xl:w-160 md:w-160">
                     <ForgetRegistrationForm />
                 </div>
-                <div className='py-5 lg:py-0 px-5 lg:h-[740px] lg:w-[640px]'>
-                    {/* <img src='../src/assets/Cancel_certificate.png' className="w-full h-full" /> */}
-                </div>
             </div>
             <div className="md:px-[20px]  2xl:px-[150px] py-[20px]">
                 <div className='px-10 py-3'>
