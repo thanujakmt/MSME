@@ -42,8 +42,8 @@ function Registration() {
                     <span className="md:text-xl">(आइए आत्मनिर्भर भारत अभियान को सफल बनाने का प्रयास करें!)</span>
                 </div>
             </div>
-            <div className='xl:flex xl:justify-evenly 2xl:flex 2xl:flex-row 2xl:items-start px-10 pt-10 pb-3'>
-                <div className='md:w-160 '>
+            <div className=' flex flex-col items-center 2xl:flex 2xl:flex-row 2xl:justify-evenly px-10 pt-10 pb-3'>
+                <div className='md:w-160'>
                     <Form />
                 </div>
                 <div className='flex flex-col items-start py-5 2xl:py-0 2xl:h-[1470px]'>
@@ -134,7 +134,7 @@ function Registration() {
                 </div>
                 <div className='px-10 py-3'>
                     <p className='text-pale_yellow text-2xl font-bold pb-3'>Some Frequently Asked Questions for more clarification</p>
-                    <div className="md:w-200 bg-white rounded-md shadow divide-y divide-gray-200 ml-5">
+                    <div className="lg:w-200 bg-white rounded-md shadow divide-y divide-gray-200 ml-5">
                         {data.map((item, index) => {
                             const isOpen = openIndex === index;
                             return (

@@ -12,12 +12,12 @@ function ForgetRegistrationForm() {
         console.log("rfggfrewerfgb", data);
     }
     return (
-        <div>
+        <div className=' '>
             <span className="bg-blue p-4 block text-white font-bold text-xl">Forgot Udyam Registration Form</span>
             <form className=" bg-gray border border-gray-300 p-5" onSubmit={forgotHandleSubmit(onSubmit)}>
-                <div className="my-3 mt-4 lg:flex justify-evenly">
-                    <div>
-                        <label htmlFor="name" className="block  text-sm font-medium text-black">1. Applicant Name*</label>
+                <div className="my-3 mt-4 md:flex gap-[30px] ">
+                    <div className=' py-2'>
+                        <label htmlFor="name" className="block  pb-2 text-sm font-medium text-black">1. Applicant Name*</label>
                         <input type="text" id="name" className="border border-gray-300 text-black
                                         text-sm rounded-lg block w-65 p-2"
                             {...forgotRegister('name', { required: "Applicant's name is required" })}
@@ -25,10 +25,9 @@ function ForgetRegistrationForm() {
                         {forgotErrors?.name && (
                             <p className="text-red-500 text-sm mt-1">{forgotErrors?.name?.message}</p>
                         )}
-                        {/* <span className='w-60 pl-3 pt-1 text-sm block'>Enter the applicant's name as mentioned on the PAN CARD</span> */}
                     </div>
-                    <div>
-                        <label htmlFor="number" className="block text-sm font-medium text-black">2. Mobile Number*</label>
+                    <div className=' py-2'>
+                        <label htmlFor="number" className="block pb-2 text-sm font-medium text-black">2. Mobile Number*</label>
                         <input type="number" id="number" className="border border-gray-300 text-black
                         text-sm rounded-lg block w-65 p-2"
                             {...forgotRegister('number', {
@@ -44,34 +43,31 @@ function ForgetRegistrationForm() {
                         {forgotErrors?.number && (
                             <p className="text-red-500 text-sm mt-1 w-60">{forgotErrors?.number?.message}</p>
                         )}
-                        {/* <span className='w-60 pl-3 pt-1 text-sm block'>Enter the applicant's 10-digit mobile number without adding +91.</span> */}
                     </div>
-                </div>
-                <div className="my-3 lg:flex justify-evenly">
+                </div >
+                <div className="my-3  md:flex gap-[30px]">
                     <div>
-                        <label htmlFor="email" className="block my-1 text-sm font-medium text-black">3. E-Mail ID*</label>
+                        <label htmlFor="email" className="block my-1 pb-2 text-sm font-medium text-black">3. E-Mail ID*</label>
                         <input type="email" id="email" className="border border-gray-300 text-black
                         text-sm rounded-lg block w-65 p-2" {...forgotRegister('email', { required: "Applicant's email id is required" })}
                             placeholder="Email ID" />
                         {forgotErrors?.email && (
                             <p className="text-red-500 text-sm mt-1">{forgotErrors?.email?.message}</p>
                         )}
-                        {/* <span className='w-60 pl-3 pt-1 text-sm block'>Enter the applicant's Email Id. Udyam Registration Certificate will be shared on that Email.</span> */}
                     </div>
-                    <div className='w-65'>
-                        <label htmlFor="recover" className="block my-1 text-sm font-medium text-black">4. Select the Certificate to be Retrieve/Recover*</label>
+                    <div className=''>
+                        <label htmlFor="recover" className="block my-1 pb-2 text-sm font-medium text-black">4. Select the Certificate to be Retrieve/Recover*</label>
                         <select id="recover" className="border border-gray-300 text-black text-sm rounded-lg p-2 w-65" {...forgotRegister('recover', { required: 'Certificate to be Retrieve/Recover is required' })}>
-                            <option value="">Select the Certificate to be Retrieve/Recover</option>
+                            <option value="">Select the Certificate</option>
                             <option>Udyam Registration Certificate</option>
                             <option>Udyog Aadhar Registration Certificate</option>
                         </select>
                         {forgotErrors?.recover && (
                             <p className="text-red-500 text-sm mt-1 w-60">{forgotErrors?.recover?.message}</p>
                         )}
-                        {/* <span className='w-60 pl-3 pt-1 text-sm block'>Applicant need to enter his udyam registration number. as mentioned on udyam certificate</span> */}
                     </div>
                 </div>
-                <div className="my-3">
+                <div className="my-3 ">
                     <div>
                         <label htmlFor="verificationCode" className="block my-1 text-sm font-medium text-black">5. Verification Code*</label>
                         <input type="text" id="verificationCode" className="border border-gray-300 text-black
