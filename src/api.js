@@ -37,6 +37,11 @@ export const api = createApi({
       }),
       invalidatesTags: ['forgotRegistration'],
     }),
+    getAllBlogs: builder.query({
+      query: () => ({
+        url: 'getAllBlogs'
+      })
+    }),
   }),
 });
 
@@ -45,5 +50,6 @@ export const {
   useRegisterUserMutation,
   useRe_registerUserMutation,
   useCancelRegistrationMutation,
-  useForgotRegistrationMutation
+  useForgotRegistrationMutation,
+  useGetAllBlogsQuery
 } = api;

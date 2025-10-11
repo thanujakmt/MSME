@@ -11,6 +11,11 @@ import PrintCertificatePage from './PrintCertificate/PrintCertificatePage';
 import UpdateCertificatePage from './UpdateCertificate/UpdateCertificatePage';
 import SampleCertificate from './SampleCertificate';
 import UdyogPrintCertificate from './UdyogPrintCertificate/UdyogPrintCertificate';
+import ContactUs from './ContactUs';
+import Blogs from './Blogs';
+import TermsCondition from './TermsCondition';
+import PrivacyPolicy from './PrivacyPolicy';
+import CancellationPolicy from './CancellationPolicy';
 
 function Home() {
     return (
@@ -27,6 +32,11 @@ function Home() {
                     <Route path="/update" element={<UpdateCertificatePage />} />
                     <Route path="/udyog_print" element={<UdyogPrintCertificate />} />
                     <Route path="/sample" element={<SampleCertificate />} />
+                    <Route path="/contactus" element={<ContactUs />} />
+                    <Route path="/blogs" element={<Blogs />} />
+                    <Route path='/terms-conditions' element={<TermsCondition />} />
+                    <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+                    <Route path='/cancellation-policy' element={<CancellationPolicy />} />
                 </Routes>
                 <Footer />
             </Router>

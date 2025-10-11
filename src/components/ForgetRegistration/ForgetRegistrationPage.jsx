@@ -26,12 +26,12 @@ function ForgetRegistrationPage() {
                     <p className='text-orange-500 text-2xl font-bold pb-2'>How can MSMEs retrieve their Udyam registration number</p>
                     <p className='text-sm'>It is a simple process to retrieve the Udyam registration number. Just follow the steps given below and easily retrieve Udyam registration number.</p><br />
                     <p className='flex flex-col text-sm'>
-                        <b>Visit the official portal</b>
+                        <b className="flex items-center"><img src="../src/assets\RightAngleIcon.png" className="h-3 w-[14px] mr-2" />Visit the official portal</b>
                         <span className='pl-4 text-sm'>•  First of all, go to the official portal of Udyam registration</span>
                         <span className='pl-4 text-sm'>•  After the website opens, click on Forget Udyam Registration</span>
                     </p><br />
                     <p className='flex flex-col text-sm'>
-                        <b>Fill the form</b>
+                        <b className="flex items-center"><img src="../src/assets\RightAngleIcon.png" className="h-3 w-[14px] mr-2" />Fill the form</b>
                         <span className='pl-4 text-sm'>•  A new page will appear on the screen, on which there will be a form for the Forget Udyam Registration Certificate</span>
                         <span className='pl-4 text-sm'>•  Fill in all the information asked in the form, such as</span>
                         <span className='pl-4 text-sm'>•  Applicant's name</span>
@@ -39,12 +39,12 @@ function ForgetRegistrationPage() {
                         <span className='pl-4 text-sm'>•  Email ID (keep in mind that the Email ID is the same which is that mentioned in the Udyam certificate)</span>
                     </p><br />
                     <p className='flex flex-col text-sm'>
-                        <b>Enter the captcha code</b>
+                        <b className="flex items-center"><img src="../src/assets\RightAngleIcon.png" className="h-3 w-[14px] mr-2" />Enter the captcha code</b>
                         <span className='pl-4 text-sm'>•  Enter the verification code in the given box to verify</span>
                         <span className='pl-4 text-sm'>•  Tick mark on the box of Terms and Conditions and Declaration</span>
                     </p><br />
                     <p className='flex flex-col text-sm'>
-                        <b>Submit application</b>
+                        <b className="flex items-center"><img src="../src/assets\RightAngleIcon.png" className="h-3 w-[14px] mr-2" />Submit application</b>
                         <span className='pl-4 text-sm'>•  Finally, click on Apply to retrieve your Udyam registration number</span>
                         <span className='pl-4 text-sm'>•  If you want to retrieve your Udyam registration number with the help of a private consultancy then some nominal charges are levied. When you apply, you will reach the direct payment gateway, and after making the online payment, you will get a confirmation message, and after that, you can retrieve your Unique Udyam registration number.</span>
                     </p>
@@ -52,9 +52,11 @@ function ForgetRegistrationPage() {
                 <div className='px-10 py-3'>
                     <p className='text-orange-500 text-2xl font-bold pb-3'>Some reasons why MSME owners forget their Udyam registration number</p>
                     <p className='text-sm'>As it is clear that Udyam registration works like a key to success for MSME owners, but there are some reasons why they forget their registration such as</p><br />
-                    <span className='text-sm'>The MSME owner has completed the Udyam registration process for his business with the help of someone else.</span><br />
-                    <span className='text-sm'>The mobile number or email ID given by them while registering Udyam is not active.</span><br />
-                    <span className='text-sm'>The Udaym registration process was completed a long time ago, and its details have not been saved.</span>
+                    <ul className="list-disc pl-8">
+                        <li className='text-sm'>The MSME owner has completed the Udyam registration process for his business with the help of someone else.</li><br />
+                        <li className='text-sm'>The mobile number or email ID given by them while registering Udyam is not active.</li><br />
+                        <li className='text-sm'>The Udaym registration process was completed a long time ago, and its details have not been saved.</li><br/>
+                    </ul>
                     <p className='text-sm'>There may be other reasons as well, but there is no need to worry about it. There is a facility available on the Udyam registration portal, due to which MSME owners can easily retrieve Udyam registration numbers.</p><br />
                     <p className='text-sm'>Note : If you do not want to face any problem related to Udyam registration number in future, then you can save all the data in cloud storage or drive, or you can take a physical printout of the Udyam registration certificate and keep it in your document file.</p>
                 </div>
@@ -64,7 +66,7 @@ function ForgetRegistrationPage() {
                     <p className='text-sm'>If you are an MSME owner and want to retrieve your Udyam Registration Number, then do not worry at all, just follow the steps given above and easily retrieve your registration number.</p>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 

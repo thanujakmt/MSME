@@ -54,20 +54,14 @@ function Header() {
                               </div>
                             </div>
                             <div className="relative inline-block text-left">
-                              <button onClick={() => document.getElementById('dropdownMenu3')?.classList?.toggle('hidden')} className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2 text-sm font-semibold text-white rounded-md">
+                              <a href="/contactus"><button onClick={() => document.getElementById('dropdownMenu3')?.classList?.toggle('hidden')} className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2 text-sm font-semibold text-white rounded-md">
                                 Contact us
-                                <svg viewBox="0 0 20 20" fill="currentColor" className="-mr-1 h-5 w-5 text-white">
-                                  <path d="M5.23 7.21a.75.75 0 011.06 0L10 10.94l3.72-3.73a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 010-1.06z" />
-                                </svg>
-                              </button>
+                              </button></a>
                             </div>
                             <div className="relative inline-block text-left">
-                              <button onClick={() => document.getElementById('dropdownMenu4')?.classList?.toggle('hidden')} className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2 text-sm font-semibold text-white rounded-md">
+                              <a href="/blogs"><button onClick={() => document.getElementById('dropdownMenu4')?.classList?.toggle('hidden')} className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2 text-sm font-semibold text-white rounded-md">
                                 Blogs
-                                <svg viewBox="0 0 20 20" fill="currentColor" className="-mr-1 h-5 w-5 text-white">
-                                  <path d="M5.23 7.21a.75.75 0 011.06 0L10 10.94l3.72-3.73a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 010-1.06z" />
-                                </svg>
-                              </button>
+                              </button></a>
                             </div>
                         </div>
                         </div>
