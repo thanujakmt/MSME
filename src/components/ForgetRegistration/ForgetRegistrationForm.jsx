@@ -1,7 +1,10 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useForgotRegistrationMutation } from '../../api';
 
 function ForgetRegistrationForm() {
+    
+    const [forgotData, {isLoading}] = useForgotRegistrationMutation();
     const {
         register: forgotRegister,
         handleSubmit: forgotHandleSubmit,
@@ -10,6 +13,7 @@ function ForgetRegistrationForm() {
 
     const onSubmit = (data) => {
         console.log("rfggfrewerfgb", data);
+        forgotData(data)
     }
     return (
         <div>
@@ -25,7 +29,6 @@ function ForgetRegistrationForm() {
                         {forgotErrors?.name && (
                             <p className="text-red-500 text-sm mt-1">{forgotErrors?.name?.message}</p>
                         )}
-                        {/* <span className='w-60 pl-3 pt-1 text-sm block'>Enter the applicant's name as mentioned on the PAN CARD</span> */}
                     </div>
                     <div>
                         <label htmlFor="number" className="block text-sm font-medium text-black">2. Mobile Number*</label>
@@ -44,7 +47,6 @@ function ForgetRegistrationForm() {
                         {forgotErrors?.number && (
                             <p className="text-red-500 text-sm mt-1 w-60">{forgotErrors?.number?.message}</p>
                         )}
-                        {/* <span className='w-60 pl-3 pt-1 text-sm block'>Enter the applicant's 10-digit mobile number without adding +91.</span> */}
                     </div>
                 </div>
                 <div className="my-3 lg:flex justify-evenly">
@@ -56,7 +58,6 @@ function ForgetRegistrationForm() {
                         {forgotErrors?.email && (
                             <p className="text-red-500 text-sm mt-1">{forgotErrors?.email?.message}</p>
                         )}
-                        {/* <span className='w-60 pl-3 pt-1 text-sm block'>Enter the applicant's Email Id. Udyam Registration Certificate will be shared on that Email.</span> */}
                     </div>
                     <div className='w-65'>
                         <label htmlFor="recover" className="block my-1 text-sm font-medium text-black">4. Select the Certificate to be Retrieve/Recover*</label>
@@ -68,7 +69,6 @@ function ForgetRegistrationForm() {
                         {forgotErrors?.recover && (
                             <p className="text-red-500 text-sm mt-1 w-60">{forgotErrors?.recover?.message}</p>
                         )}
-                        {/* <span className='w-60 pl-3 pt-1 text-sm block'>Applicant need to enter his udyam registration number. as mentioned on udyam certificate</span> */}
                     </div>
                 </div>
                 <div className="my-3">
@@ -104,7 +104,7 @@ function ForgetRegistrationForm() {
                         <p className="text-red-500 text-sm mt-1">{forgotErrors?.termsOfService1?.message}</p>
                     )}
                 </div>
-                <button type="submit" style={{ backgroundColor: "#ff6900" }} className="w-full text-white font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">Submit</button>
+                <button disabled={isLoading} type="submit" style={{ backgroundColor: "#ff6900" }} className="w-full text-white font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">Submit</button>
             </form>
         </div>
     );

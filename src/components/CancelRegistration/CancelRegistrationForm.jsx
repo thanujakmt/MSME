@@ -1,8 +1,10 @@
 import { useForm } from 'react-hook-form';
 import States_Districts from '../../States_Districts.json';
 import { useState } from 'react';
+import { useCancelRegistrationMutation } from '../../api';
 
 function CancelRegistrationForm() {
+    const [cancelledData, {isLoading}] = useCancelRegistrationMutation();
     const [stateVal, setStateVal] = useState("");
 
     const {
@@ -14,6 +16,7 @@ function CancelRegistrationForm() {
 
     const onSubmit = (data) => {
         console.log("rfggfrewerfgb", data);
+        cancelledData(data)
     }
 
     const districts = (data) => {
@@ -170,8 +173,7 @@ function CancelRegistrationForm() {
                         <p className="text-red-500 text-sm mt-1">{errors?.termsOfService?.message}</p>
                     )}
                 </div>
-                <button type="submit" onClick={() => onSubmit()
-                } style={{ backgroundColor: "#ff9933" }} className="w-full text-white font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">Submit</button>
+                <button  type="submit" disabled={isLoading} style={{ backgroundColor: "#ff9933" }} className="w-full text-white font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">Submit</button>
             </form>
 
 

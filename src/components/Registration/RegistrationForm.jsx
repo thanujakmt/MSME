@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import States_Districts from '../../States_Districts.json';
+import { useRegisterUserMutation } from '../../api';
 
 function Form() {
+    const [payload, { isLoading }] = useRegisterUserMutation()
     const [stateVal, setStateVal] = useState("");
     const {
         register: registrationRegister,
@@ -11,8 +13,9 @@ function Form() {
     } = useForm();
     console.log("fbhfw", registrationErrors);
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
         console.log("rfggfrewerfgb", data);
+        await payload(data)
     }
 
     const districts = (data) => {
@@ -285,7 +288,7 @@ function Form() {
                     )}
                     <span className='md:w-135 pl-3 pt-1 text-sm block'>Enter the 10-digit unique alphanumeric number mentioned on the applicant's PAN CARD.</span>
                 </div>
-                <button style={{ backgroundColor: "#ff9933" }} type="submit" className="w-full text-white bg-black font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">Submit Application</button>
+                <button disabled={isLoading} style={{ backgroundColor: "#ff9933" }} type="submit" className="w-full text-white bg-black font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">Submit Application</button>
             </form>
         </div>
     );

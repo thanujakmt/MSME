@@ -1,8 +1,10 @@
 import React from 'react';
 import States_Districts from '../../States_Districts.json';
 import { useForm } from 'react-hook-form';
+import { useRe_registerUserMutation } from '../../api';
 
 function ReRegistrationForm() {
+    const [re_registeredData, {isLoading}] = useRe_registerUserMutation();
     const {
         register: re_registrationRegister,
         handleSubmit: re_registrationHandleSubmit,
@@ -11,6 +13,7 @@ function ReRegistrationForm() {
 
     const onSubmit = (data) => {
         console.log("rfggfrewerfgb", data);
+        re_registeredData(data)
     }
 
     return (
@@ -128,7 +131,7 @@ function ReRegistrationForm() {
                         <p className="text-red-500 text-sm mt-1">{re_registrationErrors?.termsOfService?.message}</p>
                     )}
                 </div>
-                <button style={{ backgroundColor: "#ff9933" }} type="submit" className="w-full text-white font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">Submit</button>
+                <button disabled={isLoading} style={{ backgroundColor: "#ff9933" }} type="submit" className="w-full text-white font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">Submit</button>
             </form>
         </div>
     );
