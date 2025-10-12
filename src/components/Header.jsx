@@ -54,7 +54,7 @@ function Header() {
                               </div>
                             </div>
                             <div className="relative inline-block text-left">
-                              <a href="/contactus"><button onClick={() => document.getElementById('dropdownMenu3')?.classList?.toggle('hidden')} className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2 text-sm font-semibold text-white rounded-md">
+                              <a href="/contact-us"><button onClick={() => document.getElementById('dropdownMenu3')?.classList?.toggle('hidden')} className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2 text-sm font-semibold text-white rounded-md">
                                 Contact us
                               </button></a>
                             </div>

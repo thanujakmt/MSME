@@ -32,7 +32,7 @@ function Home() {
                     <Route path="/update" element={<UpdateCertificatePage />} />
                     <Route path="/udyog_print" element={<UdyogPrintCertificate />} />
                     <Route path="/sample" element={<SampleCertificate />} />
-                    <Route path="/contactus" element={<ContactUs />} />
+                    <Route path="/contact-us" element={<ContactUs />} />
                     <Route path="/blogs" element={<Blogs />} />
                     <Route path='/terms-conditions' element={<TermsCondition />} />
                     <Route path='/privacy-policy' element={<PrivacyPolicy />} />

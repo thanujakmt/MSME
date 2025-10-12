@@ -15,7 +15,7 @@ function Footer() {
                 <div>
                     <span className=' text-[24px] 2xl:text-2xl'>Policies</span>
                 </div>
-                <div className=' flex flex-col items-center gap-1.5'>
+                <div className=' flex flex-col items-center gap-1.5 pt-3'>
                     <a href='/terms-conditions'><span>Terms & Conditions</span></a>
                     <a href='/privacy-policy'><span>Privacy Policy</span></a>
                     <a href='/cancellation-policy'><span>Cancellation Policy</span></a>
