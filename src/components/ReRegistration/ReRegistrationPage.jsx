@@ -1,7 +1,9 @@
 
+import { useNavigate } from 'react-router-dom';
 import ReRegistrationForm from './ReRegistrationForm';
 
 function ReRegistrationPage() {
+    const navigate = useNavigate();
     return (
         <div>
             <div className=' 2xl:h-[700px]'>
@@ -49,7 +51,7 @@ function ReRegistrationPage() {
                 </div>
                 <div className='px-10 pt-3 pb-8'>
                     <p className='text-pale_yellow text-2xl font-bold pb-3'>Process of Udyam Re-registration</p>
-                    <p className='text-sm'>If you want to migrate from the old Udyog Aadhaar and register your business to the new <a href='/re-register' className='underline' target='_blank'>Udyam Re-Registration</a>, then you can easily register by following the steps given below.</p>
+                    <p className='text-sm'>If you want to migrate from the old Udyog Aadhaar and register your business to the new <span onClick={() => navigate('/re-register')} className='underline cursor-pointer'>Udyam Re-Registration</span  >, then you can easily register by following the steps given below.</p>
                     <ul className="list-disc pl-8">
                         <li className='text-sm leading-6'>First of all, you have to go to the Udyam Registration Portal</li>
                         <li className='text-sm leading-6'>When the website opens, there will be an option for Udyam Migration Consultancy in the navigation bar. click there</li>

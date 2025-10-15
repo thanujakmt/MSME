@@ -16,6 +16,7 @@ import Blogs from './Blogs';
 import TermsCondition from './TermsCondition';
 import PrivacyPolicy from './PrivacyPolicy';
 import CancellationPolicy from './CancellationPolicy';
+import BlogsDetails from './BlogsDetails';
 
 function Home() {
     return (
@@ -34,6 +35,7 @@ function Home() {
                     <Route path="/sample" element={<SampleCertificate />} />
                     <Route path="/contact-us" element={<ContactUs />} />
                     <Route path="/blogs" element={<Blogs />} />
+                    <Route path="/blog-details/:id" element={<BlogsDetails />} />
                     <Route path='/terms-conditions' element={<TermsCondition />} />
                     <Route path='/privacy-policy' element={<PrivacyPolicy />} />
                     <Route path='/cancellation-policy' element={<CancellationPolicy />} />

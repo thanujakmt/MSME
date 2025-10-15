@@ -1,22 +1,76 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import States_Districts from '../../States_Districts.json';
 import { useRegisterUserMutation } from '../../api';
+import { FullscreenLoader } from '../FullscreenLoader';
+import { Toast } from '../Toast';
 
 function Form() {
-    const [payload, { isLoading }] = useRegisterUserMutation()
+    const [payload, { isLoading, isSuccess, data }] = useRegisterUserMutation()
     const [stateVal, setStateVal] = useState("");
+    const [toastvisible, setToastVisible] = useState(true);
     const {
         register: registrationRegister,
         handleSubmit: registrationHandleSubmit,
+        resetField: registrationResetField,
         formState: { errors: registrationErrors }
     } = useForm();
-    console.log("fbhfw", registrationErrors);
 
     const onSubmit = async (data) => {
         console.log("rfggfrewerfgb", data);
-        await payload(data)
+        let payload_data = {};
+        payload_data['applicant_name'] = data.name;
+        payload_data['mobile_number'] = data.number;
+        payload_data['email_id'] = data.email;
+        payload_data['category'] = data.category;
+        payload_data['additional_info'] = {
+            address: data.address,
+            pinCode: data.pinCode,
+            state: data.state,
+            district: data.district,
+            organisation: data.organisation,
+            businessName: data.businessName,
+            dateOfCommencement: data.dateOfCommencement,
+            activity: data.activity,
+            additionalDetails: data.additionalDetails,
+            male: data.male,
+            female: data.female,
+            other: data.other,
+            account: data.account,
+            ifsc: data.ifsc,
+            panCard: data.panCard
+        }
+        // data['formId'] = "regA1Z9C4T"
+        await payload(payload_data)
     }
+
+    useEffect(() => {
+        if(isSuccess && data){
+            setTimeout(() => {
+                setToastVisible(false)
+            }, 3000);
+            registrationResetField("name")
+            registrationResetField("number")
+            registrationResetField("email")
+            registrationResetField("category")
+            registrationResetField("address")
+            registrationResetField("pinCode")
+            registrationResetField("state")
+            registrationResetField("district")
+            registrationResetField("organisation")
+            registrationResetField("businessName")
+            registrationResetField("dateOfCommencement")
+            registrationResetField("activity")
+            registrationResetField("cancellation")
+            registrationResetField("male")
+            registrationResetField("female")
+            registrationResetField("other")
+            registrationResetField("panCard")
+            registrationResetField("additionalDetails")
+            registrationResetField("ifsc")
+            registrationResetField("account")
+        }
+    }, [isSuccess, data])
 
     const districts = (data) => {
         return data?.map((dist) => (
@@ -75,7 +129,7 @@ function Form() {
                     </div>
                     <div>
                         <label htmlFor="category" className="block my-1 text-sm font-medium text-black">4. Social Category*</label>
-                         <select id="category" className="border border-gray-300 text-black text-sm rounded-lg p-2 w-65" {...registrationRegister('category', { required: "Social category is required" })}>
+                        <select id="category" className="border border-gray-300 text-black text-sm rounded-lg p-2 w-65" {...registrationRegister('category', { required: "Social category is required" })}>
                             <option value="">Select Social Category</option>
                             <option>General</option>
                             <option>OBC</option>
@@ -187,7 +241,7 @@ function Form() {
                 <div className="my-3 md:flex justify-evenly">
                     <div>
                         <label htmlFor="dateOfCommencement" className="block my-1 text-sm font-medium text-black">11. Date of Commencement of Business*</label>
-                        <input type="text" id="dateOfCommencement" className="border border-gray-300 text-black
+                        <input type="date" id="dateOfCommencement" className="border border-gray-300 text-black
                     text-sm rounded-lg block w-65 p-2" {...registrationRegister('dateOfCommencement', { required: "Date of commencement is required" })}
                             placeholder="Date of Commencement of Business" />
                         {registrationErrors?.dateOfCommencement && (
@@ -281,6 +335,9 @@ function Form() {
                             minLength: {
                                 value: 10,
                                 message: "Applicant's pan card number must be 10"
+                            }, maxLength: {
+                                value: 10,
+                                message: "Applicant's pan card number cannot exceed 10 characters",
                             }, required: "Applicant's pan card number is required"
                         })} />
                     {registrationErrors?.panCard && (
@@ -288,7 +345,8 @@ function Form() {
                     )}
                     <span className='md:w-135 pl-3 pt-1 text-sm block'>Enter the 10-digit unique alphanumeric number mentioned on the applicant's PAN CARD.</span>
                 </div>
-                <button disabled={isLoading} style={{ backgroundColor: "#ff9933" }} type="submit" className="w-full text-white bg-black font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">Submit Application</button>
+                <button disabled={isLoading} style={{ backgroundColor: "#ff9933" }} type="submit" className="w-full text-white bg-black font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">{isLoading && <FullscreenLoader />} Submit Application</button>
+                {isSuccess && <Toast message={data?.message} visible={toastvisible} />}
             </form>
         </div>
     );

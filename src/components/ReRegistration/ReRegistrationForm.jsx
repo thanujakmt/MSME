@@ -2,6 +2,7 @@ import React from 'react';
 import States_Districts from '../../States_Districts.json';
 import { useForm } from 'react-hook-form';
 import { useRe_registerUserMutation } from '../../api';
+import { FullscreenLoader } from '../FullscreenLoader';
 
 function ReRegistrationForm() {
     const [re_registeredData, {isLoading}] = useRe_registerUserMutation();
@@ -13,6 +14,7 @@ function ReRegistrationForm() {
 
     const onSubmit = (data) => {
         console.log("rfggfrewerfgb", data);
+        data['formId'] = "re_regK8P3T9Q2"
         re_registeredData(data)
     }
 
@@ -131,7 +133,7 @@ function ReRegistrationForm() {
                         <p className="text-red-500 text-sm mt-1">{re_registrationErrors?.termsOfService?.message}</p>
                     )}
                 </div>
-                <button disabled={isLoading} style={{ backgroundColor: "#ff9933" }} type="submit" className="w-full text-white font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">Submit</button>
+                <button disabled={isLoading} style={{ backgroundColor: "#ff9933" }} type="submit" className="w-full text-white font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">{isLoading && <FullscreenLoader />}Submit</button>
             </form>
         </div>
     );

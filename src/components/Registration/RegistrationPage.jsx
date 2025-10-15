@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import Form from './RegistrationForm';
+import { useNavigate } from 'react-router-dom';
 
 function Registration() {
-
+    const navigate = useNavigate();
     const [openIndex, setOpenIndex] = useState(null);
     const data = [
         {
@@ -167,7 +168,7 @@ function Registration() {
                 </div>
                 <div className='px-10 pt-3 pb-6'>
                     <p className='text-pale_yellow text-2xl font-bold pb-8'>Register yourself on MSME Registration Portal today!</p>
-                    <p className='text-sm'>For MSMEs, the <a href='/print' target='_blank' className='font-bold underline'>Udyam Registration Certificate</a> will be beneficial which can offer <b>exclusive benefits, financial assistance, </b>and <b>business growth opportunities.</b></p><br />
+                    <p className='text-sm'>For MSMEs, the <b className='underline cursor-pointer' onClick={() => navigate('/print')}>Udyam Registration Certificate</b> will be beneficial which can offer <b>exclusive benefits, financial assistance, </b>and <b>business growth opportunities.</b></p><br />
                     <p className='text-sm'>This is the time, if you haven't registered yet.</p><br />
                     <p className='text-sm'>Here is your Growth Partner at Udyam registration | Udyog Aadhar Online | Msme registration!</p><br />
                     <p className='text-sm'><b>Join the group of successful businesses, register today on MSME Registration.in Portal!</b></p><br />

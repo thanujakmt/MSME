@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Footer() {
+    const navigate = useNavigate();
     return (
         <div className=' md:h-[250px] h-[400px] bg-blue  gap-16 md:flex md:justify-center md:items-end md:pb-10'>
             <div className=' flex flex-col items-center pb-4 2xl:h-40'>
@@ -16,9 +18,9 @@ function Footer() {
                     <span className=' text-[24px] 2xl:text-2xl'>Policies</span>
                 </div>
                 <div className=' flex flex-col items-center gap-1.5 pt-3'>
-                    <a href='/terms-conditions'><span>Terms & Conditions</span></a>
-                    <a href='/privacy-policy'><span>Privacy Policy</span></a>
-                    <a href='/cancellation-policy'><span>Cancellation Policy</span></a>
+                    <span onClick={() => navigate('/terms-conditions')}>Terms & Conditions</span>
+                    <span onClick={() => navigate('/privacy-policy')}>Privacy Policy</span>
+                    <span onClick={() => navigate('/cancellation-policy')}>Cancellation Policy</span>
                 </div>
             </div>
             <div className='flex items-center justify-center gap-6 p-1 h-24 text-white'>

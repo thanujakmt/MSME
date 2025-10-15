@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Eligibility() {
+    const navigate = useNavigate();
     return (
         <div className=" bg-white px-[20px]  2xl:px-[150px] py-[20px]">
             <span className="text-pale_yellow text-[26px] py-5 font-bold">Easy Registration</span>
@@ -26,9 +28,7 @@ function Eligibility() {
                 <div>
                     <span className="text-[14px]">If your investment in plant and machinery or equipment falls under the government’s MSME definition, you are eligible!</span>
                 </div>
-                <a className='bg-orange px-5 py-1 rounded-[5px] text-white 2xl:text-[18px] text-center font-bold' href={"/register"}>
-                    <button>Get Udyam Registration</button>
-                </a>
+                <button style={{ backgroundColor: "#ff6900" }} className='px-5 py-1 rounded-[5px] text-white 2xl:text-[18px] text-center font-bold' onClick={() => navigate('/register')}>Get Udyam Registration</button>
             </div>
         </div>
     );

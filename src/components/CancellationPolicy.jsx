@@ -20,7 +20,7 @@ function CancellationPolicy() {
                     <p className='text-orange-500 text-2xl font-bold pb-2'>Refund Policy</p>
                     <p className='text-sm'>We follow a <b>NO REFUND POLICY.</b></p><br />
                     <p className='text-sm'>Refunds against any order placed with us can be claimed only if service delivery from our end is not possible. In such cases, refunds shall be allowed to the client after deducting internet and handling charges of Rs 500/-.</p><br />
-                    <p className='text-sm'><b>Note:</b>Non-delivery of services on account of any deficiency in documents and/or not providing OTP (One Time Password), or any other shortcoming or non-cooperation from the client side which renders delivery of services impossible on our end, shall not be treated as "failure of delivery of services from our end". Such cases are treated as non-cooperation from the client's end, and no refunds shall be available in such cases as there is no lack of performance on our end.</p>
+                    <p className='text-sm'><b>Note:</b> Non-delivery of services on account of any deficiency in documents and/or not providing OTP (One Time Password), or any other shortcoming or non-cooperation from the client side which renders delivery of services impossible on our end, shall not be treated as "failure of delivery of services from our end". Such cases are treated as non-cooperation from the client's end, and no refunds shall be available in such cases as there is no lack of performance on our end.</p>
                 </div>
             </div>
         </div>
