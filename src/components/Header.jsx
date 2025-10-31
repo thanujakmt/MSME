@@ -37,8 +37,8 @@ function Header() {
                 </div>
                 <div className="relative inline-block text-left">
                   <button onClick={() => {
-                    document.getElementById('dropdownMenu2')?.classList?.toggle('hidden')
-                    document.getElementById('dropdownMenu1')?.classList?.add('hidden')
+                    // document.getElementById('dropdownMenu2')?.classList?.toggle('hidden')
+                    // document.getElementById('dropdownMenu1')?.classList?.add('hidden')
                   }} className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2 text-sm font-semibold text-white rounded-md">
                     Certificate
                     <svg viewBox="0 0 20 20" fill="currentColor" className="-mr-1 h-5 w-5 text-white">
@@ -57,8 +57,8 @@ function Header() {
                 </div>
                 <div className="relative inline-block text-left">
                   <button onClick={() => {
-                    document.getElementById('dropdownMenu1')?.classList?.add('hidden')
-                    document.getElementById('dropdownMenu2')?.classList?.add('hidden')
+                    // document.getElementById('dropdownMenu1')?.classList?.add('hidden')
+                    // document.getElementById('dropdownMenu2')?.classList?.add('hidden')
                     navigate("/contact-us")
                   }} className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2 text-sm font-semibold text-white rounded-md">
                     Contact us
@@ -66,8 +66,8 @@ function Header() {
                 </div>
                 <div className="relative inline-block text-left">
                   <button onClick={() => {
-                    document.getElementById('dropdownMenu1')?.classList?.add('hidden')
-                    document.getElementById('dropdownMenu2')?.classList?.add('hidden')
+                    // document.getElementById('dropdownMenu1')?.classList?.add('hidden')
+                    // document.getElementById('dropdownMenu2')?.classList?.add('hidden')
                     navigate('/blogs')
                   }} className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2 text-sm font-semibold text-white rounded-md">
                     Blogs

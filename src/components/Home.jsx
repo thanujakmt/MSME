@@ -24,7 +24,7 @@ function Home() {
             <Router>
                 <Header />
                 <Routes>
-                    <Route path='/dashboard' element={<Dashboard />} />
+                    <Route path='/' element={<Dashboard />} />
                     <Route path="/register" element={<Registration />} />
                     <Route path="/re-register" element={<ReRegistrationPage />} />
                     <Route path="/cancel" element={<CancelRegistrationPage />} />

@@ -1,22 +1,48 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import States_Districts from '../../States_Districts.json';
 import { useForm } from 'react-hook-form';
 import { useRe_registerUserMutation } from '../../api';
 import { FullscreenLoader } from '../FullscreenLoader';
+import { Toast } from '../Toast';
 
 function ReRegistrationForm() {
-    const [re_registeredData, {isLoading}] = useRe_registerUserMutation();
+    const [re_registeredData, {isLoading, isSuccess, data}] = useRe_registerUserMutation();
+    const [toastvisible, setToastVisible] = useState(false);
     const {
         register: re_registrationRegister,
         handleSubmit: re_registrationHandleSubmit,
         formState: { errors: re_registrationErrors }
     } = useForm();
 
-    const onSubmit = (data) => {
-        console.log("rfggfrewerfgb", data);
-        data['formId'] = "re_regK8P3T9Q2"
-        re_registeredData(data)
-    }
+    const onSubmit = async (data) => {
+            console.log("rfggfrewerfgb", data);
+            let payload_data = {};
+            payload_data['applicant_name'] = data.name;
+            payload_data['mobile_number'] = data.number;
+            payload_data['email_id'] = data.email;
+            payload_data['category'] = 'OMNH';
+            payload_data['additional_info'] = {
+                state: data.state,
+                uamNumber: data.uamNumber,
+                changesRequired: data.changesRequired
+            }
+            // data['formId'] = "regA1Z9C4T"
+            await re_registeredData(payload_data)
+        }
+    
+        useEffect(() => {
+            if(isSuccess && data){
+                setTimeout(() => {
+                    setToastVisible(false)
+                }, 3000);
+                re_registrationRegister("name")
+                re_registrationRegister("number")
+                re_registrationRegister("email")
+                re_registrationRegister("state")
+                re_registrationRegister ("uamNumber")
+                re_registrationRegister("changesRequired")
+            }
+        }, [isSuccess, data])
 
     return (
         <div>
@@ -104,19 +130,19 @@ function ReRegistrationForm() {
                     </div>
                 </div>
                 <div className="my-3">
-                    <label htmlFor="email" className="block my-1 text-sm font-medium text-black">Do you want to make any changes in details of your existing
+                    <label htmlFor="changesRequired" className="block my-1 text-sm font-medium text-black">Do you want to make any changes in details of your existing
                         Udyog/Udyam Certificate?</label>
                     <div className='md:flex'>
                         <div className="flex items-center pr-5">
-                            <input id="country-option-1" type="radio" name="yes" value="yes" className="w-4 h-4 border-gray-300 " {...re_registrationRegister('updateChange')} />
-                            <label htmlFor="country-option-1" className="block ms-2  text-sm font-medium text-gray-900">
+                            <input id="changesRequired-option-1" type="radio" name="yes" value="yes" className="w-4 h-4 border-gray-300 " {...re_registrationRegister('changesRequired')} />
+                            <label htmlFor="changesRequired-option-1" className="block ms-2  text-sm font-medium text-gray-900">
                                 Yes
                             </label>
                         </div>
 
                         <div className="flex items-center">
-                            <input id="country-option-2" type="radio" name="no" value="no" className="w-4 h-4 border-gray-300" {...re_registrationRegister('updateChange')} />
-                            <label htmlFor="country-option-2" className="block ms-2 text-sm font-medium text-gray-900">
+                            <input id="changesRequired-option-2" type="radio" name="no" value="no" className="w-4 h-4 border-gray-300" {...re_registrationRegister('changesRequired')} />
+                            <label htmlFor="changesRequired-option-2" className="block ms-2 text-sm font-medium text-gray-900">
                                 No
                             </label>
                         </div>
@@ -134,6 +160,7 @@ function ReRegistrationForm() {
                     )}
                 </div>
                 <button disabled={isLoading} style={{ backgroundColor: "#ff9933" }} type="submit" className="w-full text-white font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">{isLoading && <FullscreenLoader />}Submit</button>
+                {isSuccess && <Toast message={data?.message} visible={toastvisible} />}
             </form>
         </div>
     );
