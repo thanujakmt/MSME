@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { build } from 'vite';
 
 export const api = createApi({
   reducerPath: 'api', // optional, defaults to 'api'
@@ -37,6 +38,14 @@ export const api = createApi({
       }),
       invalidatesTags: ['forgotRegistration'],
     }),
+    applicants: build.mutation({
+      query: (data) => ({    
+        url: 'applicants',
+        method: 'POST',
+        body: data,
+      }),
+      invalidatesTags: ['applicants'],
+    }),
     getAllBlogs: builder.query({
       query: () => ({
         url: 'getAllBlogs'
@@ -51,5 +60,7 @@ export const {
   useRe_registerUserMutation,
   useCancelRegistrationMutation,
   useForgotRegistrationMutation,
-  useGetAllBlogsQuery
+  useGetAllBlogsQuery,
+  useApplicantsMutation
 } = api;
+
