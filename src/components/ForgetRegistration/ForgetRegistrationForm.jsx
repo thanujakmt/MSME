@@ -1,20 +1,51 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useForgotRegistrationMutation } from '../../api';
+import { Toast } from '../Toast';
+import { FullscreenLoader } from '../FullscreenLoader';
 
 function ForgetRegistrationForm() {
-    
-    const [forgotData, {isLoading}] = useForgotRegistrationMutation();
+
+    const [forgotData, { isLoading, isSuccess, data: forgotRegisterData }] = useForgotRegistrationMutation();
+    const [toastvisible, setToastVisible] = useState(true);
+
     const {
         register: forgotRegister,
         handleSubmit: forgotHandleSubmit,
+        resetField: forgotResetField,
         formState: { errors: forgotErrors }
     } = useForm();
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
         console.log("rfggfrewerfgb", data);
-        forgotData(data)
+        let payload_data = {};
+        payload_data['applicant_name'] = data.name;
+        payload_data['mobile_number'] = data.number;
+        payload_data['email_id'] = data.email;
+        payload_data['category'] = 'OMNH';
+        payload_data['additional_info'] = {
+            recover: data.recover,
+            agreeToTerms: data.termsOfService,
+            // agreeToTerms: data.termsOfService1
+        }
+        // data['formId'] = "regA1Z9C4T"
+        await forgotData(payload_data)
     }
+
+    useEffect(() => {
+        if (isSuccess && forgotRegisterData) {
+            setTimeout(() => {
+                setToastVisible(false)
+            }, 3000);
+            forgotResetField("name")
+            forgotResetField("number")
+            forgotResetField("email")
+            forgotResetField("recover")
+            forgotResetField("termsOfService")
+            forgotResetField("termsOfService1")
+        }
+    }, [isSuccess, forgotRegisterData]);
+
     return (
         <div className=' '>
             <span className="bg-blue p-4 block text-white font-bold text-xl">Forgot Udyam Registration Form</span>
@@ -71,7 +102,7 @@ function ForgetRegistrationForm() {
                         )}
                     </div>
                 </div>
-                <div className="my-3 ">
+                {/* <div className="my-3 ">
                     <div>
                         <label htmlFor="verificationCode" className="block my-1 text-sm font-medium text-black">5. Verification Code*</label>
                         <input type="text" id="verificationCode" className="border border-gray-300 text-black
@@ -81,7 +112,7 @@ function ForgetRegistrationForm() {
                             <p className="text-red-500 text-sm mt-1">{forgotErrors?.verificationCode?.message}</p>
                         )}
                     </div>
-                </div>
+                </div> */}
                 <div className="my-3 mt-5">
                     <div className="flex items-start mb-5">
                         <div className="flex items-center h-5">
@@ -104,7 +135,8 @@ function ForgetRegistrationForm() {
                         <p className="text-red-500 text-sm mt-1">{forgotErrors?.termsOfService1?.message}</p>
                     )}
                 </div>
-                <button disabled={isLoading} type="submit" style={{ backgroundColor: "#ff6900" }} className="w-full text-white font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">Submit</button>
+                <button disabled={isLoading} type="submit" style={{ backgroundColor: "#ff6900" }} className="w-full text-white font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">{isLoading && <FullscreenLoader />}Submit</button>
+                {isSuccess && <Toast message={forgotRegisterData?.message} visible={toastvisible} />}
             </form>
         </div>
     );
