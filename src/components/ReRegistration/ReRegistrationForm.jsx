@@ -6,43 +6,47 @@ import { FullscreenLoader } from '../FullscreenLoader';
 import { Toast } from '../Toast';
 
 function ReRegistrationForm() {
-    const [re_registeredData, {isLoading, isSuccess, data}] = useRe_registerUserMutation();
-    const [toastvisible, setToastVisible] = useState(false);
+    const [re_registered, { isLoading, isSuccess, data }] = useRe_registerUserMutation();
+    const [toastvisible, setToastVisible] = useState(true);
     const {
         register: re_registrationRegister,
         handleSubmit: re_registrationHandleSubmit,
+        resetField: re_registrationResetField,
         formState: { errors: re_registrationErrors }
     } = useForm();
 
     const onSubmit = async (data) => {
-            console.log("rfggfrewerfgb", data);
-            let payload_data = {};
-            payload_data['applicant_name'] = data.name;
-            payload_data['mobile_number'] = data.number;
-            payload_data['email_id'] = data.email;
-            payload_data['category'] = 'OMNH';
-            payload_data['additional_info'] = {
-                state: data.state,
-                uamNumber: data.uamNumber,
-                changesRequired: data.changesRequired
-            }
-            // data['formId'] = "regA1Z9C4T"
-            await re_registeredData(payload_data)
+        console.log("rfggfrewerfgb", data);
+        let payload_data = {};
+        payload_data['applicant_name'] = data.name;
+        payload_data['mobile_number'] = data.number;
+        payload_data['email_id'] = data.email;
+        payload_data['category'] = 'OMNH';
+        payload_data['additional_info'] = {
+            state: data.state,
+            uamNumber: data.uamNumber,
+            changesRequired: data.changesRequired,
+            agreeToTerms: data.termsOfService
         }
-    
-        useEffect(() => {
-            if(isSuccess && data){
-                setTimeout(() => {
-                    setToastVisible(false)
-                }, 3000);
-                re_registrationRegister("name")
-                re_registrationRegister("number")
-                re_registrationRegister("email")
-                re_registrationRegister("state")
-                re_registrationRegister ("uamNumber")
-                re_registrationRegister("changesRequired")
-            }
-        }, [isSuccess, data])
+        // data['formId'] = "regA1Z9C4T"
+        await re_registered(payload_data)
+    }
+console.log("edrftghyjukiloikuj", isSuccess, data);
+
+    useEffect(() => {
+        if (isSuccess && data) {
+            setTimeout(() => {
+                setToastVisible(false)
+            }, 3000);
+            re_registrationResetField("name")
+            re_registrationResetField("number")
+            re_registrationResetField("email")
+            re_registrationResetField("state")
+            re_registrationResetField("uamNumber")
+            re_registrationResetField("changesRequired")
+            re_registrationResetField("termsOfService")
+        }
+    }, [isSuccess, data])
 
     return (
         <div>
