@@ -1,16 +1,51 @@
 import { useForm } from "react-hook-form";
 import States_Districts from '../../States_Districts.json';
+import { useApplicantsMutation } from '../../api';
+import { FullscreenLoader } from "../FullscreenLoader";
+import { Toast } from "../Toast";
+import { useEffect, useState } from "react";
 
 function UpdateCertificateForm() {
+    const [updateCertificate, {isLoading, isSuccess, data: updateCertificateData}] = useApplicantsMutation();
+    const [toastvisible, setToastVisible] = useState(true);
+    
     const {
         register: updateRegister,
         handleSubmit: updateHandleSubmit,
+        resetField: updateResetField,
         formState: { errors: updateErrors }
     } = useForm();
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
         console.log("rfggfrewerfgb", data);
+        let payload_data = {};
+        payload_data['applicant_name'] = data.name;
+        payload_data['mobile_number'] = data.number;
+        payload_data['email_id'] = data.email;
+        payload_data['category'] = 'OMNH';
+        payload_data['additional_info'] = {
+            detailsToBeUpdatedOnCertificate: data.additionalDetails,
+            state: data.state,
+            // agreeToTerms: data.termsOfService1
+        }
+        // data['formId'] = "regA1Z9C4T"
+        await updateCertificate(payload_data)
     }
+
+    useEffect(() => {
+        if (isSuccess && updateCertificateData) {
+            setTimeout(() => {
+                setToastVisible(false)
+            }, 3000);
+            updateResetField("name")
+            updateResetField("number")
+            updateResetField("email")
+            updateResetField("additionalDetails")
+            updateResetField("state")
+            // updateResetField("termsOfService1")
+        }
+    }, [isSuccess, updateCertificateData]);
+
     return (
         <div className='flex flex-col lg:w-150'>
             <span className="bg-blue p-4 block text-white font-bold text-xl">Update Udyam Registration Certificate Online</span>
@@ -103,7 +138,8 @@ function UpdateCertificateForm() {
                         <span className='pl-3 pt-1 text-sm block w-full'>Enter the applicant's Details To Be Updated On Certificate.</span>
                     </div>
                 </div>
-                <button style={{ backgroundColor: "#ff6900" }} type="submit" className="w-full text-white font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">Submit</button>
+                <button style={{ backgroundColor: "#ff6900" }} type="submit" className="w-full text-white font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">{isLoading && <FullscreenLoader />}Submit</button>
+                {isSuccess && <Toast message={updateCertificateData?.message} visible={toastvisible} />}
             </form>
         </div>
     );
