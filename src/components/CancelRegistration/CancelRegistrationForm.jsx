@@ -1,23 +1,57 @@
 import { useForm } from 'react-hook-form';
 import States_Districts from '../../States_Districts.json';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useCancelRegistrationMutation } from '../../api';
+import { FullscreenLoader } from '../FullscreenLoader';
+import { Toast } from '../Toast';
 
 function CancelRegistrationForm() {
-    const [cancelledData, {isLoading}] = useCancelRegistrationMutation();
+    const [cancelRegistation, { isLoading, isSuccess, data: cancelRegistationData }] = useCancelRegistrationMutation();
+    const [toastvisible, setToastVisible] = useState(true);
     const [stateVal, setStateVal] = useState("");
 
     const {
         register,
         handleSubmit,
+        resetField,
         formState: { errors }
     } = useForm();
-    console.log("fbhfw", errors);
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
         console.log("rfggfrewerfgb", data);
-        cancelledData(data)
+        let payload_data = {};
+        payload_data['applicant_name'] = data.name;
+        payload_data['mobile_number'] = data.number;
+        payload_data['email_id'] = data.email;
+        payload_data['category'] = 'OMNH';
+        payload_data['additional_info'] = {
+            state: data.state,
+            udyamUamNumber: data.uamNumber,
+            businessName: data.businessName,
+            district: data.district,
+            TypeOfCancellation: data.cancellation,
+            agreeToTerms: data.termsOfService
+        }
+        // data['formId'] = "regA1Z9C4T"
+        await cancelRegistation(payload_data)
     }
+
+    useEffect(() => {
+        if (isSuccess && (cancelRegistationData)) {            
+            setTimeout(() => {
+                setToastVisible(false)
+            }, 3000);
+            resetField("name")
+            resetField("number")
+            resetField("email")
+            resetField("state")
+            resetField("uamNumber")
+            resetField("district")
+            resetField('busineesName')
+            resetField('cancellation')
+            resetField("termsOfService")
+        }
+    }, [isSuccess, cancelRegistationData]);
 
     const districts = (data) => {
         return data?.map((dist) => (
@@ -55,7 +89,7 @@ function CancelRegistrationForm() {
                                 }, maxLength: {
                                     value: 10,
                                     message: "Applicant's mobile number cannot exceed 10 characters",
-                                },  required: "Applicant's mobile number is required"
+                                }, required: "Applicant's mobile number is required"
                             })}
                             placeholder="Mobile Number" />
                         {errors?.number && (
@@ -173,7 +207,9 @@ function CancelRegistrationForm() {
                         <p className="text-red-500 text-sm mt-1">{errors?.termsOfService?.message}</p>
                     )}
                 </div>
-                <button  type="submit" disabled={isLoading} style={{ backgroundColor: "#ff9933" }} className="w-full text-white font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">Submit</button>
+                <button type="submit" disabled={isLoading} style={{ backgroundColor: "#ff9933" }} className="w-full text-white font-medium rounded-lg text-sm px-5 my-2 py-2.5 text-center">{isLoading && <FullscreenLoader />}Submit</button>
+                {isSuccess && <Toast message={cancelRegistationData?.message} visible={toastvisible} />}
+                
             </form>
 
 
